@@ -1,0 +1,14 @@
+{
+  "en": {
+    "instruction": "Click the button to get instructions",
+    "play_button": "Play Instruction"
+  },
+  "id": {
+    "instruction": "Klik tombol untuk mendapatkan petunjuk",
+    "play_button": "Mainkan Petunjuk"
+  },
+  "jv": {
+    "instruction": "Klik tombol kanggo nggoleki petunjuk",
+    "play_button": "Mainkan Petunjuk"
+  }
+}

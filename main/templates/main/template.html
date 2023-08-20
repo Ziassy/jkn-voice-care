@@ -1,0 +1,50 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Translator</title>
+</head>
+<body>
+    <h1>Language Translator</h1>
+    
+    <form method="get">
+        <select name="language">
+            {% for language in languages %}
+                <option value="{{ language }}" {% if language == selected_language %}selected{% endif %}>
+                    {{ language }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Translate</button>
+    </form>
+    
+    <p>{% trans text %}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="play">Play</button>
+    </form>
+    
+    <p>Selected Code: {{ selected_code }}</p>
+    
+     <audio id="audio-player" controls>
+        <source src="{{ MEDIA_URL }}media/audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio> 
+
+    <script>
+        const playForm = document.getElementById('play-form');
+        const audioPlayer = document.getElementById('audio-player');
+
+        playForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            // Play the audio
+            audioPlayer.play();
+        });
+    </script>
+
+</body>
+</html>
