@@ -26,12 +26,16 @@ SECRET_KEY = 'django-insecure-(10=0mm6^@-9ai%1i-dnmn@s&#icc2mrzb3)f9yo*7+s%c813y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'  # Keep this one
 MEDIA_URL = '/media/'    # Keep this one
+
+# settings.py
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -44,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',  # Your app
+    'sslserver'
+
 ]
 
 MIDDLEWARE = [
@@ -115,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'id'
 
 TIME_ZONE = 'UTC'
 
