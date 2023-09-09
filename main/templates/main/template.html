@@ -5,48 +5,355 @@
 <html>
 <head>
     <title>Language Translator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:,">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Language Translator</h1>
-    
-    <form method="get">
-        <select name="language">
-            {% for language in languages %}
-                <option value="{{ language }}" {% if language == selected_language %}selected{% endif %}>
-                    {{ language }}
-                </option>
-            {% endfor %}
-        </select>
-        <button type="submit">Translate</button>
-    </form>
-    
-    <p>{% trans text %}</p>
-    
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" name="play">Play</button>
-    </form>
-    
-    <p>Selected Code: {{ selected_code }}</p>
-    
-     <audio id="audio-player" controls>
-        <source src="{{ MEDIA_URL }}media/audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio> 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="{% static 'logo JKN.png' %}" alt="logoJKN"></a>
+        <div class="toggle-container">
+            <img src="{% static 'bell-solid.svg' %}" alt="bell" class="bell-icon">
+        </div>
+    </div>
+  </nav>
+  
+  <div class="play">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center" style="border: 1px solid;">
+        <div class="col" style="border: 1px solid;">
+          Hi, Lessang<br>Semua Keluarga Anda Terlindungi (Aktif)
+        </div>
+        <div class="col-md-auto" >
+          <form method="get">
+            <select name="language">
+                {% for language in languages %}
+                    <option value="{{ language }}" {% if language == selected_language %}selected{% endif %}>
+                        {{ language }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Translate</button>
+        </form>
+        </div>
+        <div class="col col-lg-2" style="border: 1px solid;">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        const playForm = document.getElementById('play-form');
-        const audioPlayer = document.getElementById('audio-player');
+  <p>{% trans text %}</p>
 
-        playForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the form from submitting
+  <p>Selected Code: {{ selected_code }}</p>
+  <audio id="audio-player" controls>
+    <source src="{{ MEDIA_URL }}media/audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio> 
 
-            // Play the audio
-            audioPlayer.play();
-        });
-    </script>
+  <div class="features-jkn">
+    <div class="container text-center">
+      <div class="row row-cols-4">
 
+        <div class="col">
+          <div class="thumb">
+            <form method="post">
+              {% csrf_token %}
+              <button type="button" id="play-button" class="custom-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                </svg> Play
+              </button>
+            </form>
+            <a href="{{ pItem.get_absolute_url }}">
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Info Program JKN</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <form method="post">
+              {% csrf_token %}
+              <button type="button" id="play-button" class="custom-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                </svg> Play
+              </button>
+            </form>
+            <a href="{{ pItem.get_absolute_url }}">
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Info Lokasi Faskes</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Info Riwayat Pelayanan</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Rehab (Cicilan)</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Penambahan Peserta</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Info Peserta</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Pendaftaran Pelayanan (Antrean)</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Konsultasi Dokter</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Perubahan Data Peserta</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Pengaduan Layanan JKN</figcaption>
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Info Ketersediaan Tempat Tidur</figcaption>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div class="thumb">
+            <a href="{{ pItem.get_absolute_url }}">
+              <form method="post">
+                {% csrf_token %}
+                <button type="button" id="play-button" class="custom-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                  </svg> Play
+                </button>
+              </form>
+              <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/>
+              </svg>
+              <figcaption>Menu Lainnya</figcaption>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <section class="the-program d-flex text-center" style="border: 1px solid;">
+      <div class="container">
+        <div class="row">
+            <div class="carousel-item active">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="..."
+              />
+            </div>
+        </div>
+      </div>
+    </section>
+
+<footer>
+  <div class="container-fluid">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-8 lg:px-16 py-8 text-white">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5">
+        <div class="col" style="border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></div>
+        <div class="col" style="border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32s32 14.3 32 32V400c0 8.8 7.2 16 16 16s16-7.2 16-16V96zm64 24v80c0 13.3 10.7 24 24 24H296c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z"/></svg></div>
+        <div class="col" style="border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#324971}</style><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"/></svg></div>
+        <div class="col" style="border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-4h2v2h-2z"/></svg></div>
+        <div class="col" style="border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col" id="back-button" style="border: 1px solid;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 256 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/></svg>      </div>
+      <div class="col" id="home-button" style="border: 1px solid;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+      </div>
+      <div class="col" id="tab-switcher" style="border: 1px solid;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H384zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+<script>
+  // Ambil referensi elemen tombol play dan elemen audio
+  const playButton = document.getElementById('play-button');
+  const audioPlayer = document.getElementById('audio-player');
+
+  playButton.addEventListener('click', function () {
+    // Play the audio
+    audioPlayer.play();
+    
+    // Ubah tampilan elemen audio menjadi terlihat
+    audioPlayer.style.display = 'block';
+  });
+</script>
 </body>
 </html>

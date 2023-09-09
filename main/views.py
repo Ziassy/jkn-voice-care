@@ -8,7 +8,7 @@ def translate(request):
     languages = ['id', 'jv', 'su']
     selected_language = request.GET.get('language', 'id')
     text = {
-        'id': 'Halo dunia',
+        'id': 'Hello World',
         'jv': 'Halo jagad',
         'su': 'Halo dunya',
     }[selected_language]

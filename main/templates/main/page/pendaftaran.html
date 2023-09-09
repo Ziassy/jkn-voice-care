@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Pemberitahuan dengan Kotak</title>
+  <style>
+  nav .container-fluid {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .navbar-brand svg {
+    margin-right: 10px;
+  }
+
+  nav .navbar-brand h5 {
+    margin: 0;
+  }
+
+/* CSS untuk mengatur elemen select */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* CSS untuk mengatur kotak pemberitahuan */
+.pemberitahuan {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 99%;
+}
+
+/* CSS untuk mengatur kotak input keluhan */
+#keluhan {
+  width: 99%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar d-flex bg-body-tertiary fixed-top">
+    <div class="container-fluid d-flex align-items-center">
+      <a class="navbar-brand" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+          <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+        <h5 style="text-align: center; margin-left: 10px;">Fasilitas Kesehatan Tingkat Pertama</h5>
+      </a>
+    </div>
+  </nav>
+  
+  <form action="" method="POST">
+    <div class="mb-3">
+      <p>Peserta</p>
+      <select name="peserta" required>
+        <option value="pilihan1">Pilihan 1</option>
+        <option value="pilihan2">Pilihan 2</option>
+        <option value="pilihan3">Pilihan 3</option>
+      </select>
+    </div>
+    
+
+    <p>Faskes Tingkat Pertama</p>
+
+    <div class="mb-3">
+      <p>Pilihan Poli</p>
+      <select name="poli" required>
+        <option value="pilihan1">Pilihan 1</option>
+        <option value="pilihan2">Pilihan 2</option>
+        <option value="pilihan3">Pilihan 3</option>
+      </select>  
+    </div>
+    
+    <div class="mb-3">
+      <p>Pilihan Tanggal Daftar</p>
+      <select name="tanggalDaftar" id="tanggalDaftar" required>
+        <option value="sekarang">Hari Ini (09-09-2023)</option>
+        <option value="besok">Besok (10-09-2023)</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <p>Pilih Jadwal</p>
+      <select name="jadwal">
+        <option value="00:00 - 23:59">00:00 - 23:59</option>
+      </select>  
+    </div>
+    
+    <div class="mb-3">
+      <div class="pemberitahuan">
+        Pendaftaran melalui aplikasi Mobile-JKN dibuka 24 jam sebelum jam buka operasional dan ditutup 1 jam sebelum jam tutup operasional.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <p>Keluhan</p>
+      <input type="text" id="keluhan" name="keluhan" placeholder="Silakan isi keluhan...">
+    </div>
+
+    <button type="submit">Simpan</button>
+  </form>
+</body>
+</html>

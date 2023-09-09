@@ -1,20 +1,58 @@
-/* body {
-    font-family: Arial, sans-serif;
+body {
+    font-size: 14px;
+}
+.navbar img {
+    height: 40px; /* Adjust the height as needed */
 }
 
-.container {
-    text-align: center;
-    margin: 50px;
+.navbar {
+    margin-bottom: 10px; /* Atur jarak bawah dari elemen <nav> */
 }
 
-.language-dropdown {
-    margin-bottom: 20px;
+/* play button */
+/* #play-button {
+    
+} */
+
+/* audio */
+#audio-player {
+    display: none;
 }
 
-.sound-toggle {
-    margin-bottom: 20px;
+.features-jkn {
+    margin-top: 20px; /* Atur jarak atas dari elemen <div> */
+    margin-bottom: 2.1em; /* Atur jarak bawah dari elemen <nav> */
 }
 
+/* button-audio */
+.custom-button {
+    font-size: 10px; /* Mengganti ukuran font */
+    padding: 4px 8px; /* Mengganti padding (tinggi x lebar) */
+    background-color: #0468aa8e; /* Mengubah warna latar belakang */
+    color: #fff; /* Mengubah warna teks */
+    border: none; /* Menghilangkan border */
+    border-radius: 4px; /* Memberi sudut melengkung pada tombol */
+    cursor: pointer; /* Menjadikan kursor tangan saat mengarah ke tombol */
+  }
+  
+  .custom-button:hover {
+    background-color: #1290e4; /* Mengubah warna latar belakang saat dihover */
+  }
+
+  
+.badge-populer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #B31312; 
+    color: #fff; 
+    font-size: 12px; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    z-index: 1;
+  }
+
+/* Common styles for the slider switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -22,12 +60,14 @@
     height: 34px;
 }
 
+/* Hide default HTML checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
+/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -64,4 +104,36 @@ input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-} */
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Adjust the bell icon style */
+.bell-icon {
+    width: 24px; /* Set the desired width */
+    height: 24px; /* Set the desired height */
+    margin-right: 20px;
+}
+  
+.carousel-item img {
+    display: inline-block;
+    background-size: cover;
+}
+  
+.carousel-item img {
+    margin-bottom: 10px;
+}
+
+
+/* footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
