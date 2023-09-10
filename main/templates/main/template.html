@@ -16,13 +16,16 @@
         <form method="get" class="mb-4">
             <div class="input-group">
                 <select class="form-select" name="language">
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Sunda">Sunda</option>
-                    <option value="Jawa">Jawa</option>
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                            {{ language.name }}
+                        </option>
+                    {% endfor %}
                 </select>
                 <button type="submit" class="btn btn-primary">Translate</button>
             </div>
         </form>
+
 
         <div class="form-check form-switch mb-3">
             <input class="form-check-input" type="checkbox" id="toggleSwitch">

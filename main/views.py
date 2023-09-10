@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from gtts import gTTS
 import os
-from django.conf import settings  # Import settings
-
+from django.conf import settings
+from .models import LanguageChoice  
 
 def translate(request):
-    languages = ['id', 'jv', 'su']
+    languages = LanguageChoice.objects.all()  # Ambil semua bahasa dari database
     selected_language = request.GET.get('language', 'id')
     text = {
         'id': 'Halo dunia',
@@ -13,13 +13,11 @@ def translate(request):
         'su': 'Halo dunya',
     }[selected_language]
 
-    selected_code = selected_language  # Use the selected_language as the code
+    selected_code = selected_language
 
     if request.method == 'GET' and 'translate' in request.GET:
         tts = gTTS(text=text, lang='id')
-        audio_path = os.path.join(
-            settings.MEDIA_ROOT, 'audio.mp3')  # Use MEDIA_ROOT
-        print('ktrigger')
+        audio_path = os.path.join(settings.MEDIA_ROOT, 'audio.mp3')
         tts.save(audio_path)
     else:
         print("tidak tergenerate")
