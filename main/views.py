@@ -2,11 +2,14 @@ from django.shortcuts import render
 from gtts import gTTS
 import os
 from django.conf import settings
-from .models import LanguageChoice  
+from .models import LanguageChoice, TranslatedMenu
+
 
 def translate(request):
-    languages = LanguageChoice.objects.all()  # Ambil semua bahasa dari database
+    languages = LanguageChoice.objects.all()
+    menus = TranslatedMenu.objects.all()
     selected_language = request.GET.get('language', 'id')
+
     text = {
         'id': 'Halo dunia',
         'jv': 'Halo jagad',
@@ -22,4 +25,4 @@ def translate(request):
     else:
         print("tidak tergenerate")
 
-    return render(request, 'main/template.html', {'languages': languages, 'selected_language': selected_language, 'text': text, 'selected_code': selected_code})
+    return render(request, 'main/template.html', {'languages': languages, 'selected_language': selected_language, 'text': text, 'selected_code': selected_code, 'menus': menus})
