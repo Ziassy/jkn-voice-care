@@ -31,13 +31,11 @@
             <label class="form-check-label" for="toggleSwitch">Toggle On/Off</label>
         </div>
 
-        {% for menu in menus %}
+        {% for menu_name, translation in menu_translations.items %}
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ menu.menu_name }}</h5>
-                <img src="path/to/your/image.jpg" alt="{{ menu.menu_name }}" class="img-fluid mb-2">
-                <p class="translation">{{ menu_translations|default:"Translation not available" }}</p>
-                <button type="button" class="btn btn-success">Play</button>
+                <h5 class="card-title">{{ menu_name }}</h5>
+                <p class="translation">{{ translation|default:"Translation not available"|safe }}</p>
             </div>
         </div>
         {% endfor %}
