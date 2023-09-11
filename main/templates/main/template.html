@@ -65,6 +65,7 @@
                     playButtons.forEach(button => {
                         button.style.display = 'none';
                     });
+                    select.selectedIndex = 0;
                 }
             });
 
@@ -79,7 +80,7 @@
                 const translateButton = document.querySelector('button[type="submit"]');
                 select.disabled = !isToggleOn;
                 translateButton.disabled = !isToggleOn;
-                
+
                 // Display the "Play" button when the toggle switch is true
                 playButtons.forEach(button => {
                     button.style.display = 'block';
@@ -87,6 +88,7 @@
             } else {
                 toggleSwitch.checked = false;
                 isToggleOn = false;
+                select.selectedIndex = 0;
             }
 
             playButtons.forEach(button => {
