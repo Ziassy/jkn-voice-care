@@ -48,7 +48,7 @@
 
             toggleSwitch.addEventListener('change', function () {
                 isToggleOn = toggleSwitch.checked;
-                localStorage.setItem('isToggleOn', isToggleOn.toString()); // Store toggle status in local storage as a string
+                localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false'); // Store toggle status in local storage as a string
 
                 // Enable or disable the select dropdown and translate button
                 const select = document.querySelector('select[name="language"]');
@@ -74,6 +74,12 @@
                 toggleSwitch.checked = true;
                 isToggleOn = true;
 
+                // Enable or disable the select dropdown and translate button
+                const select = document.querySelector('select[name="language"]');
+                const translateButton = document.querySelector('button[type="submit"]');
+                select.disabled = !isToggleOn;
+                translateButton.disabled = !isToggleOn;
+                
                 // Display the "Play" button when the toggle switch is true
                 playButtons.forEach(button => {
                     button.style.display = 'block';
