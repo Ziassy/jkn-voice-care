@@ -32,27 +32,30 @@
         </div>
 
         {% for menu_name, translation in menu_translations.items %}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ menu_name }}</h5>
-                <p class="translation">{{ translation|default:"Translation not available"|safe }}</p>
-                <button type="button" class="btn btn-success play" id="play" name="play" style="display: none;">Play</button>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ menu_name }}</h5>
+                    <p class="translation">{{ translation|default:"Translation not available"|safe }}</p>
+
+                    <img src="https://s3.us-east-1.amazonaws.com/hyunday-file/1694432248462-Icon_Info_JKN.png" alt="Image Description">
+                    
+                    <button type="button" class="btn btn-success play" id="play" name="play" style="display: none;">Play</button>
+                </div>
             </div>
-        </div>
         {% endfor %}
+
         
         <script>
             const playButtons = document.querySelectorAll('.play');
             const toggleSwitch = document.getElementById('toggleSwitch');
+            const select = document.querySelector('select[name="language"]');
+            const translateButton = document.querySelector('button[type="submit"]');
             let isToggleOn = toggleSwitch.checked;
 
             toggleSwitch.addEventListener('change', function () {
                 isToggleOn = toggleSwitch.checked;
                 localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false'); // Store toggle status in local storage as a string
 
-                // Enable or disable the select dropdown and translate button
-                const select = document.querySelector('select[name="language"]');
-                const translateButton = document.querySelector('button[type="submit"]');
                 select.disabled = !isToggleOn;
                 translateButton.disabled = !isToggleOn;
 
@@ -76,8 +79,6 @@
                 isToggleOn = true;
 
                 // Enable or disable the select dropdown and translate button
-                const select = document.querySelector('select[name="language"]');
-                const translateButton = document.querySelector('button[type="submit"]');
                 select.disabled = !isToggleOn;
                 translateButton.disabled = !isToggleOn;
 
