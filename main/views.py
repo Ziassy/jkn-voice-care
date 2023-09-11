@@ -24,15 +24,17 @@ def translate(request):
         translation = translations.filter(menu__menu_id=menu.menu_id).first()
         menu_translations[menu.menu_name] = translation.translation if translation else 'Translation not available'
 
-    if request.method == 'GET' and 'translate' in request.GET:
-        # Use the selected language for text-to-speech
-        text = menu_translations.get(
-            'your_menu_id', 'Default text if menu_id not found')
-        tts = gTTS(text=text, lang=selected_language)
-        audio_path = os.path.join(settings.MEDIA_ROOT, 'audio.mp3')
-        tts.save(audio_path)
+    if request.method == 'GET':
+        for menu_id, translation_text in menu_translations.items():
+            # Gunakan ID menu sebagai nama file audio
+            audio_filename = f'audio-{menu_id}.mp3'
+            # Ubah teks terjemahan menjadi audio dengan bahasa yang sesuai
+            tts = gTTS(text=translation_text, lang='id')
+            audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+            tts.save(audio_path)
+        print("Audio berhasil tergenerate")
     else:
-        print("tidak tergenerate")
+        print("Tidak tergenerate")
 
     return render(request, 'main/template.html', {'languages': languages, 'selected_language': selected_language, 'selected_code': selected_code, 'menus': menus, 'menu_translations': menu_translations})
 
