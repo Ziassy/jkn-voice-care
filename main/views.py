@@ -26,13 +26,20 @@ def translate(request):
 
     if request.method == 'GET':
         for menu_id, translation_text in menu_translations.items():
-            # Gunakan ID menu sebagai nama file audio
-            audio_filename = f'audio-{menu_id}.mp3'
-            # Ubah teks terjemahan menjadi audio dengan bahasa yang sesuai
-            tts = gTTS(text=translation_text, lang='id')
-            audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-            tts.save(audio_path)
-        print("Audio berhasil tergenerate")
+            if translation_text != 'Translation not available':
+                # Gunakan ID menu sebagai nama file audio
+                audio_filename = f'audio-{menu_id}.mp3'
+                tts = gTTS(text=translation_text, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
+            else:
+                # Hapus file audio jika terdapat teks 'Translation not available'
+                audio_filename = f'audio-{menu_id}.mp3'
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                if os.path.exists(audio_path):
+                    os.remove(audio_path)
+        print(menu_translations)
+
     else:
         print("Tidak tergenerate")
 
