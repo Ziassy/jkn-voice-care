@@ -36,10 +36,10 @@
         {% for menu_name, translation in menu_translations.items %}
         <div class="card">
             <div class="card-body">
-                <button type="button" class="btn btn-success play" id="play" name="play" data-bs-toggle="modal" data-bs-target="#modalTransation" data-translation="{{ translation }}" style="display: none;">Play</button>
                 <p class="translation" hidden>{{ translation|default:"Translation not available"|safe }}</p>
                 {% for menu in menus %}
                 {% if menu.menu_name == menu_name %}
+                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalTransation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" style="display: none;">Play</button>
                 <img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}">
                 {% endif %}
                 {% endfor %}
@@ -63,7 +63,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="button" class="btn btn-primary">Selanjutnya</button>
+                        <a href="menu_detail" class="btn btn-primary buka-menu-button">Buka menu</a>
                     </div>
                 </div>
             </div>
@@ -73,6 +73,7 @@
         <script>
             const playButtons = document.querySelectorAll('.play');
             const translationContent = document.getElementById('translationContent');
+            const menuDetailLink = document.getElementById('menuDetailLink');
             const toggleSwitch = document.getElementById('toggleSwitch');
             const select = document.getElementById('languageSelect');
             const translationForm = document.querySelector('form[method="get"]');
@@ -123,9 +124,17 @@
 
             playButtons.forEach(button => {
                 button.addEventListener('click', function (e) {
-                const translation = button.getAttribute('data-translation');
-                translationContent.textContent = translation;   
-                    
+                    const translation = button.getAttribute('data-translation');
+                    const menuId = button.getAttribute('data-menu-id'); // Get the menu_id from the button
+                    const detailURL = `/menu/${menuId}/`; // Construct the menu detail URL
+                    translationContent.textContent = translation;
+
+                    // Select the "Buka menu" button inside the modal by its class
+                    const menuDetailLink = document.querySelector('.buka-menu-button');
+
+                    if (menuDetailLink) {
+                        menuDetailLink.href = detailURL; // Set the href attribute to the menu detail URL
+                    }
                 });
             });
         </script>

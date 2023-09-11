@@ -6,8 +6,8 @@ from django.views.static import serve
 from django.contrib import admin
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.translate, name='translate'),
+    path('menu/<str:menu_id>/', views.menu_detail, name='menu_detail'),
 ]
 
 if settings.DEBUG:

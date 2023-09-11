@@ -15,7 +15,7 @@ class TranslatedMenu(models.Model):
         LanguageChoice, through='Translation')
     image_url = models.URLField(
         default='https://s3.us-east-1.amazonaws.com/hyunday-file/1694438095296-Avatar.png')
-    detail_url = models.URLField(default="")  # Set the default value to an empty string
+    detail_url = models.URLField(default="")  # Add a detail URL field
 
     def __str__(self):
         return self.menu_name
