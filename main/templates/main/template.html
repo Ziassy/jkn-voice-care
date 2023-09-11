@@ -36,15 +36,18 @@
         {% for menu_name, translation in menu_translations.items %}
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ menu_name }}</h5>
-                <p class="translation" hidden>{{ translation|default:"Translation not available"|safe }}</p>
-
-                <img src="https://s3.us-east-1.amazonaws.com/hyunday-file/1694432248462-Icon_Info_JKN.png" alt="Image Description">
-                
                 <button type="button" class="btn btn-success play" id="play" name="play" data-bs-toggle="modal" data-bs-target="#modalTransation" data-translation="{{ translation }}" style="display: none;">Play</button>
+                <p class="translation" hidden>{{ translation|default:"Translation not available"|safe }}</p>
+                {% for menu in menus %}
+                {% if menu.menu_name == menu_name %}
+                <img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}">
+                {% endif %}
+                {% endfor %}
+                <h5 class="card-title">{{ menu_name }}</h5>
             </div>
         </div>
         {% endfor %}
+
 
         {% comment %} modal popup {% endcomment %}
         <!-- Modal -->
@@ -59,8 +62,8 @@
                         <p id="translationContent"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary">Selanjutnya</button>
                     </div>
                 </div>
             </div>

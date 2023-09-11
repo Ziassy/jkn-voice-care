@@ -8,12 +8,14 @@ class LanguageChoice(models.Model):
     def __str__(self):
         return self.name
 
-
 class TranslatedMenu(models.Model):
     menu_id = models.CharField(max_length=50, unique=True)
     menu_name = models.CharField(max_length=50)
     translations = models.ManyToManyField(
         LanguageChoice, through='Translation')
+    image_url = models.URLField(
+        default='https://s3.us-east-1.amazonaws.com/hyunday-file/1694438095296-Avatar.png')
+    detail_url = models.URLField(default="")  # Set the default value to an empty string
 
     def __str__(self):
         return self.menu_name
@@ -24,7 +26,6 @@ class TranslatedMenu(models.Model):
             return translation.translation
         except Translation.DoesNotExist:
             return 'Translation not available'
-
 
 class Translation(models.Model):
     menu = models.ForeignKey(TranslatedMenu, on_delete=models.CASCADE)
