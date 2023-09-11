@@ -30,7 +30,7 @@
                 <p class="translation" hidden>{{ translation|default:"Translation not available"|safe }}</p>
                 {% for menu in menus %}
                 {% if menu.menu_name == menu_name %}
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalTransation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" style="display: none;">Play</button>
+                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalTransation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}"style="display: none;">Play</button>
                 <img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}">
                 {% endif %}
                 {% endfor %}
@@ -50,12 +50,14 @@
                     </div>
                     <div class="modal-body">
                         <p id="translationContent"></p>
+                        <audio id="audioPlayer"></audio>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <a href="menu_detail" class="btn btn-primary buka-menu-button">Buka menu</a>
+                        <a href="#" class="btn btn-primary buka-menu-button">Buka menu</a>
                     </div>
                 </div>
             </div>
         </div>
+
 {% endblock content %}

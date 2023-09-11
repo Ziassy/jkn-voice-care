@@ -51,19 +51,39 @@ const languageSelectChange = () => {
   translationForm.submit();
 }
 
+// Function to replace spaces with underscores
+const replaceSpacesWithUnderscores = (str) => {
+  return str.replace(/\s+/g, ' ');
+};
+
 const playButtonClick = (e) => {
   const translation = e.target.getAttribute('data-translation');
   const menuId = e.target.getAttribute('data-menu-id');
+  const menuName = e.target.getAttribute('data-menu-name');
   const detailURL = `/menu/${menuId}/`;
   const translationContent = document.getElementById('translationContent');
+  const audioPlayer = document.getElementById('audioPlayer');
+
+  // Set the translation content
   translationContent.textContent = translation;
+
+  // Replace spaces with underscores in menuName
+  const menuNameWithoutSpaces = replaceSpacesWithUnderscores(menuName);
+
+  // Construct the audio file URL based on the menuName
+  const audioURL = `/media/audio-${menuNameWithoutSpaces}.mp3`; // Adjust the file format as needed
+
+  // Set the audio source and display the audio player
+  audioPlayer.src = audioURL;
+  audioPlayer.play();
+
 
   const menuDetailLink = document.querySelector('.buka-menu-button');
 
   if (menuDetailLink) {
     menuDetailLink.href = detailURL;
   }
-}
+};
 
 document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
 document.getElementById('languageSelect').addEventListener('change', languageSelectChange);
