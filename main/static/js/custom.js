@@ -1,66 +1,76 @@
-const playButtons = document.querySelectorAll('.play');
-const translationContent = document.getElementById('translationContent');
-const menuDetailLink = document.getElementById('menuDetailLink');
-const toggleSwitch = document.getElementById('toggleSwitch');
-const select = document.getElementById('languageSelect');
-const translationForm = document.querySelector('form[method="get"]');
-let isToggleOn = toggleSwitch.checked;
+const toggleSwitchChange = () => {
+  const toggleSwitch = document.getElementById('toggleSwitch');
+  const select = document.getElementById('languageSelect');
+  const translationForm = document.querySelector('form[method="get"]');
+  let isToggleOn = toggleSwitch.checked;
 
-toggleSwitch.addEventListener('change', function () {
   isToggleOn = toggleSwitch.checked;
-  localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false'); // Store toggle status in local storage as a string
+  localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false');
 
   select.disabled = !isToggleOn;
 
-  // Display the "Play" button when the toggle switch is true
   if (isToggleOn) {
-    playButtons.forEach(button => {
-      button.style.display = 'block';
-    });
+    showPlayButtons();
   } else {
-    playButtons.forEach(button => {
-      button.style.display = 'none';
-    });
+    hidePlayButtons();
     select.selectedIndex = 0;
   }
-});
+}
 
-// Read the toggle status from local storage when the page loads
-const storedToggleStatus = localStorage.getItem('isToggleOn');
-if (storedToggleStatus === 'true') {
-  toggleSwitch.checked = true;
-  isToggleOn = true;
-
-  select.disabled = !isToggleOn;
-
-  // Display the "Play" button when the toggle switch is true
+const showPlayButtons = () => {
+  const playButtons = document.querySelectorAll('.play');
   playButtons.forEach(button => {
     button.style.display = 'block';
   });
-} else {
-  toggleSwitch.checked = false;
-  isToggleOn = false;
-  select.selectedIndex = 0;
 }
 
-// Add an event listener for the language select dropdown change event
-select.addEventListener('change', function () {
-  // Submit the form when a language is selected
-  translationForm.submit();
-});
-
-playButtons.forEach(button => {
-  button.addEventListener('click', function (e) {
-    const translation = button.getAttribute('data-translation');
-    const menuId = button.getAttribute('data-menu-id'); // Get the menu_id from the button
-    const detailURL = `/menu/${menuId}/`; // Construct the menu detail URL
-    translationContent.textContent = translation;
-
-    // Select the "Buka menu" button inside the modal by its class
-    const menuDetailLink = document.querySelector('.buka-menu-button');
-
-    if (menuDetailLink) {
-      menuDetailLink.href = detailURL; // Set the href attribute to the menu detail URL
-    }
+const hidePlayButtons = () => {
+  const playButtons = document.querySelectorAll('.play');
+  playButtons.forEach(button => {
+    button.style.display = 'none';
   });
+}
+
+const loadToggleStatus = () => {
+  const toggleSwitch = document.getElementById('toggleSwitch');
+  const select = document.getElementById('languageSelect');
+  const playButtons = document.querySelectorAll('.play');
+
+  const storedToggleStatus = localStorage.getItem('isToggleOn');
+  if (storedToggleStatus === 'true') {
+    toggleSwitch.checked = true;
+    select.disabled = false;
+    showPlayButtons();
+  } else {
+    toggleSwitch.checked = false;
+    select.selectedIndex = 0;
+    hidePlayButtons();
+  }
+}
+
+const languageSelectChange = () => {
+  const translationForm = document.querySelector('form[method="get"]');
+  translationForm.submit();
+}
+
+const playButtonClick = (e) => {
+  const translation = e.target.getAttribute('data-translation');
+  const menuId = e.target.getAttribute('data-menu-id');
+  const detailURL = `/menu/${menuId}/`;
+  const translationContent = document.getElementById('translationContent');
+  translationContent.textContent = translation;
+
+  const menuDetailLink = document.querySelector('.buka-menu-button');
+
+  if (menuDetailLink) {
+    menuDetailLink.href = detailURL;
+  }
+}
+
+document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
+document.getElementById('languageSelect').addEventListener('change', languageSelectChange);
+document.querySelectorAll('.play').forEach(button => {
+  button.addEventListener('click', playButtonClick);
 });
+
+loadToggleStatus();
