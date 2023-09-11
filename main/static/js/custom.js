@@ -1,7 +1,6 @@
 const toggleSwitchChange = () => {
   const toggleSwitch = document.getElementById('toggleSwitch');
   const select = document.getElementById('languageSelect');
-  const translationForm = document.querySelector('form[method="get"]');
   let isToggleOn = toggleSwitch.checked;
 
   isToggleOn = toggleSwitch.checked;
@@ -34,7 +33,6 @@ const hidePlayButtons = () => {
 const loadToggleStatus = () => {
   const toggleSwitch = document.getElementById('toggleSwitch');
   const select = document.getElementById('languageSelect');
-  const playButtons = document.querySelectorAll('.play');
 
   const storedToggleStatus = localStorage.getItem('isToggleOn');
   if (storedToggleStatus === 'true') {
