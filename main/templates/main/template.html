@@ -15,14 +15,16 @@
 
         <form method="get" class="mb-4">
             <div class="input-group">
-                <select class="form-select" name="language" {% if not is_toggle_on %}disabled{% endif %}>
+                <select class="form-select" id="languageSelect" name="language" {% if not is_toggle_on %}disabled{% endif %}>
+                    <option value="Default" disabled>
+                            Pilih Bahasa
+                    </option>
                     {% for language in languages %}
                         <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
                             {{ language.name }}
                         </option>
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" {% if not is_toggle_on %}disabled{% endif %}>Translate</button>
             </div>
         </form>
 
@@ -45,59 +47,63 @@
         {% endfor %}
 
         
-        <script>
-            const playButtons = document.querySelectorAll('.play');
-            const toggleSwitch = document.getElementById('toggleSwitch');
-            const select = document.querySelector('select[name="language"]');
-            const translateButton = document.querySelector('button[type="submit"]');
-            let isToggleOn = toggleSwitch.checked;
+    <script>
+        const playButtons = document.querySelectorAll('.play');
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const select = document.getElementById('languageSelect');
+        const translationForm = document.querySelector('form[method="get"]');
+        let isToggleOn = toggleSwitch.checked;
 
-            toggleSwitch.addEventListener('change', function () {
-                isToggleOn = toggleSwitch.checked;
-                localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false'); // Store toggle status in local storage as a string
+        toggleSwitch.addEventListener('change', function () {
+            isToggleOn = toggleSwitch.checked;
+            localStorage.setItem('isToggleOn', isToggleOn ? 'true' : 'false'); // Store toggle status in local storage as a string
 
-                select.disabled = !isToggleOn;
-                translateButton.disabled = !isToggleOn;
+            select.disabled = !isToggleOn;
 
-                // Display the "Play" button when the toggle switch is true
-                if (isToggleOn) {
-                    playButtons.forEach(button => {
-                        button.style.display = 'block';
-                    });
-                } else {
-                    playButtons.forEach(button => {
-                        button.style.display = 'none';
-                    });
-                    select.selectedIndex = 0;
-                }
-            });
-
-            // Read the toggle status from local storage when the page loads
-            const storedToggleStatus = localStorage.getItem('isToggleOn');
-            if (storedToggleStatus === 'true') {
-                toggleSwitch.checked = true;
-                isToggleOn = true;
-
-                // Enable or disable the select dropdown and translate button
-                select.disabled = !isToggleOn;
-                translateButton.disabled = !isToggleOn;
-
-                // Display the "Play" button when the toggle switch is true
+            // Display the "Play" button when the toggle switch is true
+            if (isToggleOn) {
                 playButtons.forEach(button => {
                     button.style.display = 'block';
                 });
             } else {
-                toggleSwitch.checked = false;
-                isToggleOn = false;
+                playButtons.forEach(button => {
+                    button.style.display = 'none';
+                });
                 select.selectedIndex = 0;
             }
+        });
 
+        // Read the toggle status from local storage when the page loads
+        const storedToggleStatus = localStorage.getItem('isToggleOn');
+        if (storedToggleStatus === 'true') {
+            toggleSwitch.checked = true;
+            isToggleOn = true;
+
+             select.disabled = !isToggleOn;
+
+            // Display the "Play" button when the toggle switch is true
             playButtons.forEach(button => {
-                button.addEventListener('click', function (e) {
-                    // Add code to play audio here (if audioPlayer is defined)
-                });
+                button.style.display = 'block';
             });
-        </script>
+        } else {
+            toggleSwitch.checked = false;
+            isToggleOn = false;
+            select.selectedIndex = 0;
+        }
+
+        // Add an event listener for the language select dropdown change event
+        select.addEventListener('change', function () {
+            // Submit the form when a language is selected
+            translationForm.submit();
+        });
+
+        playButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                // Add code to play audio here (if audioPlayer is defined)
+            });
+        });
+    </script>
+
     </div>
 </body>
 </html>
