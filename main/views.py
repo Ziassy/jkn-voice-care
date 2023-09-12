@@ -21,35 +21,30 @@ def translate(request):
 
     menu_submenus = {}
 
-   # translation based on the menu ID
+    # translation based on the menu ID
     for menu in menus:
         translation = translations.filter(menu__menu_id=menu.menu_id).first()
         menu_translations[menu.menu_name] = translation.translation if translation else 'Translation not available'
 
+        # Retrieve submenus for the current menu
         submenus = SubMenu.objects.filter(menu_id=menu.id)
-        menu_submenus[menu.menu_name] = submenus
 
-    if request.method == 'GET':
-        for menu_id, translation_text in menu_translations.items():
-            if translation_text != 'Translation not available':
-                # Gunakan ID menu sebagai nama file audio
-                audio_filename = f'audio-{menu_id}.mp3'
-                tts = gTTS(text=translation_text, lang='id')
-                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-                tts.save(audio_path)
-            else:
-                # Hapus file audio jika terdapat teks 'Translation not available'
-                audio_filename = f'audio-{menu_id}.mp3'
-                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-                if os.path.exists(audio_path):
-                    os.remove(audio_path)
-        print(menu_submenus)
-        print(menu_translations)
+        # Convert submenus to a list of dictionaries
+        submenus_list = [{'submenu_name': submenu.submenu_name}
+                         for submenu in submenus]
 
-    else:
-        print("Tidak tergenerate")
+        # Store the list of submenus in the menu_submenus dictionary
+        menu_submenus[menu.menu_id] = submenus_list
 
-    return render(request, 'main/template.html', {'languages': languages, 'selected_language': selected_language, 'selected_code': selected_code, 'menus': menus, 'menu_translations': menu_translations, 'menu_submenus': menu_submenus})
+    # Pass the selected_menu_id to the template
+    return render(request, 'main/template.html', {
+        'languages': languages,
+        'selected_language': selected_language,
+        'selected_code': selected_code,
+        'menus': menus,
+        'menu_translations': menu_translations,
+        'menu_submenus': menu_submenus,
+    })
 
 
 def menu_detail(request, menu_id):
