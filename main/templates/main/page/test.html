@@ -7,6 +7,7 @@
     <title>Language Translator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:,">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../static/css/style.css">
 </head>
@@ -14,11 +15,11 @@
 <div class="media">
   <nav class="navbar">
     <div class="navbar-custom-container">
-      <img style="width: 497.87px; height: 84.26px; left: 0px; top: 0px; position: absolute" src="../../../static/img/image_19-removebg-preview 2.png" />
-      <img style="width: 497.87px; height: 105.96px; left: 0px; top: 14.04px; position: absolute" src="../../../static/img/image_19-removebg-preview 1.png" />
+      <img class="img1" src="../../../static/img/image_19-removebg-preview 2.png" />
+      <img class="img2" src="../../../static/img/image_19-removebg-preview 1.png" />
     </div>
     <div class="navbar-body">
-      <div style="text-align: center; color: white; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 21px; word-wrap: break-word">v4.5.0</div>
+      <div class="navbar-body-text">v4.5.0</div>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
         <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.3351 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
       </svg>
@@ -48,19 +49,21 @@
             <div class="badge-icon-inner"></div>
           </div>
         </div>
-        <div class="status">
-          <div class="status-bar"></div>
-          <div class="status-dot"></div>
-        </div>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
       </div>
     </div>
   </header>
+
+
 
   <section class="menu">
     <div class="menu-item">
       <div class="menu-item-content">  
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -68,7 +71,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -76,7 +79,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -84,7 +87,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -123,10 +126,10 @@
         </div>
       </div>
     </div>
-    <div style="left: 35px; top: 460px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex">
+    <div class="menu-item1">
       <div class="menu-item-content">  
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -134,7 +137,31 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <section class="popupantrean" id="popupantrean">
+          <div class="popup-container">
+            <div class="popup-title">
+              <div class="title-text">Pendaftaran Pelayanan (Antrean)</div>
+            </div>
+            <div class="popup-description">Pada menu ini, Anda dapat melakukan antrian secara online tanpa harus datang ke puskesmas, Praktik Dokter, Klinik pratama atau yang setara, dan juga apotek.</div>
+            <div class="tutup-selanjutnya">
+              <div class="tutup">
+                <div class="inner-tutup">Tutup</div>
+              </div>
+              <div class="selanjutnya">
+                <div class="inner-selanjutnya">Selanjutnya</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" id="button-pelayanan">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -142,15 +169,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
-              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-            </svg>
-            Putar
-          </button> 
-        </div>
-        <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -189,10 +208,10 @@
         </div>
       </div>
     </div>
-    <div style="left: 35px; top: 680px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex">
+    <div class="menu-item2">
       <div class="menu-item-content">  
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -200,7 +219,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -208,7 +227,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -216,7 +235,7 @@
           </button> 
         </div>
         <div class="menu-icon">
-          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+          <button type="button" class="custom-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
               <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
             </svg>
@@ -264,6 +283,27 @@
       <img class="image3" src="../../../static/img/image 51.png">
     </div>
   </section>
+
+  <!-- <div class="container-fasilitas-kesehatan">
+    <div style="width: 486px; height: 360px; background: white; border-top-left-radius: 30px; border-top-right-radius: 30px; position: relative; z-index: 1;">
+    <div style="color: #06B6D4; font-size: 18px; font-family: Poppins; font-weight: 600; line-height: 27px; word-wrap: break-word">Pilih Jenis Fasilitas Kesehatan</div>
+    <div style="width: 190px; height: 185px; background: white; box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.25); border-radius: 18px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; gap: 22px; display: inline-flex">
+      <div style="width: 154px; padding-bottom: 12px; padding-left: 8px; padding-right: 8px; border-bottom: 0.75px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+        <img style="width: 60px; height: 60px" src="https://via.placeholder.com/60x60" />
+      </div>
+      <div style="align-self: stretch; height: 42px; padding-left: 16px; padding-right: 16px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+        <div style="align-self: stretch; text-align: center; color: #1A1A1A; font-size: 14px; font-family: Poppins; font-weight: 600; line-height: 21px; word-wrap: break-word">Faskes Rujukan Tingkat Lanjut</div>
+      </div>
+    </div>
+    <div style="width: 190px; height: 185px; background: white; box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.25); border-radius: 18px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; gap: 22px; display: inline-flex">
+      <div style="width: 154px; padding-bottom: 12px; padding-left: 8px; padding-right: 8px; border-bottom: 0.75px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+        <img style="width: 60px; height: 60px" src="https://via.placeholder.com/60x60" />
+      </div>
+      <div style="align-self: stretch; height: 42px; padding-left: 16px; padding-right: 16px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4px; display: flex">
+        <div style="align-self: stretch; text-align: center; color: #1A1A1A; font-size: 14px; font-family: Poppins; font-weight: 600; line-height: 21px; word-wrap: break-word">Faskes <br/>Tingkat Pertama</div>
+      </div>
+    </div>
+  </div> -->
 
   <footer>
     <div class="site-footer">
@@ -314,6 +354,21 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    const popupantrean = document.getElementById('popupantrean');
+    const buttonPelayanan = document.getElementById('button-pelayanan');
+
+
+    // Function to show the popup
+    function showPopup() {
+      popupantrean.style.display = 'block'; // Show the popup
+      body.style.backgroundColor = 'rgba(44, 46, 54, 0.65)';
+    }
+
+    buttonPelayanan.addEventListener('click', showPopup);
+  </script>
 </div>
 </body>
 </html>

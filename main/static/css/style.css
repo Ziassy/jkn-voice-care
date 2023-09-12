@@ -1,5 +1,8 @@
 .media {
-  width: 480px; height: 1306px; background: white
+  width: 480px;
+  height: 1306px;
+  background: white;
+  overflow: hidden;
 }
 
 .navbar{
@@ -8,6 +11,14 @@
   left: 0px; 
   top: 0px; 
   position: absolute;
+}
+
+.navbar .img1 {
+  width: 497.87px; height: 84.26px; left: 0px; top: 0px; position: absolute
+}
+
+.navbar .img2 {
+  width: 497.87px; height: 105.96px; left: 0px; top: 14.04px; position: absolute
 }
 
 .navbar-custom-container{
@@ -30,6 +41,10 @@
   display: inline-flex;
 }
 
+.navbar-body-text {
+  text-align: center; color: white; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 21px; word-wrap: break-word;
+}
+
 .informasi-pengguna {
   width: 409px; 
   padding-left: 12px; 
@@ -38,7 +53,7 @@
   padding-bottom: 8px; 
   left: 36px; 
   top: 128px; 
-  position: absolute; 
+  position: absolute;
   background: white; 
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.20); 
   border-radius: 12px; 
@@ -161,21 +176,136 @@
   width: 12px; height: 7.20px; left: 2px; top: 4px; position: absolute; background: #FAFAFA;
 }
 
-.informasi-pengguna .status {
-  width: 40px; height: 20px; position: relative;
+
+/* Toogle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; 
+  height: 20px;
 }
 
-.informasi-pengguna .status-bar {
-  width: 40px; height: 14px; left: 0px; top: 3px; position: absolute; background: #0891B2; border-radius: 10px;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.informasi-pengguna .status-dot {
-  width: 20px; height: 20px; left: 20px; top: 0px; position: absolute; background: #FAFAFA; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.50); border-radius: 9999px;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 10px;
 }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0891B2;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0891B2; 
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 9999px; 
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/* ini bagian popup antrean */
+.popupantrean {
+  display: none;
+}
+
+.popupantrean.active .informasi-pengguna .navbar {
+  position: unset;
+}
+
+.popupantrean.active {
+  width: 498px;
+  height: 1306px;
+}
+
+.popup-container {
+  position: absolute;
+  background-color: #D9D9D9;
+  top: 399px;
+}
+
+.popup-title {
+  width: 300px; height: 37px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: #FAFAFA; border-top-left-radius: 8px; border-top-right-radius: 8px; justify-content: flex-start; align-items: center; display: inline-flex
+}
+
+.popupantrean .title-text {
+  flex: 1 1 0; text-align: center; color: #171717; font-size: 14px; font-family: Poppins; font-weight: 600; line-height: 21px; word-wrap: break-word
+}
+
+.popupantrean .popup-description {
+  width: 280px; color: #171717; font-size: 12px; font-family: Poppins; font-weight: 400; line-height: 18px; word-wrap: break-word
+}
+
+.popupantrean .tutup-selanjutnya {
+  width: 300px; height: 40px; padding-top: 4px; padding-bottom: 10px; padding-left: 16px; padding-right: 16px; background: #FAFAFA; border-top-left-radius: 8px; border-top-right-radius: 8px; justify-content: center; align-items: center; gap: 18px; display: inline-flex
+}
+
+.popupantrean .tutup {
+  height: 26px; padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px; border-radius: 4px; overflow: hidden; border: 0.50px #A3A3A3 solid; justify-content: center; align-items: center; gap: 4px; display: flex
+}
+
+.popupantrean .inner-tutup {
+  color: #171717; font-size: 12px; font-family: Poppins; font-weight: 500; line-height: 18px; word-wrap: break-word
+}
+
+.popupantrean .selanjutnya {
+  padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px; background: #16A34A; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; gap: 4px; display: flex
+}
+
+.popupantrean .inner-selanjutnya {
+  text-align: center; color: #FAFAFA; font-size: 12px; font-family: Poppins; font-weight: 500; line-height: 18px; word-wrap: break-word;
+}
+
 
 /* ini css bagian menu  */
 .menu-item{
   left: 35px; top: 257px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex;
+}
+
+.menu-item1{
+  left: 35px; top: 460px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex
+}
+
+.menu-item2{
+  left: 35px; top: 680px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex
 }
 
 .menu-item-content{
@@ -184,6 +314,10 @@
 
 .menu-icon{
   height: 25px; padding: 2px 15px; background: #06B6D4; border-radius: 12px; border: 0.5px #0891B2 solid; justify-content: center; align-items: center; gap: 4px; display: flex;
+}
+
+.menu .custom-button{
+  background: none; border: none; padding: 4px 8px; font-size: 12px;
 }
 
 .menu .info-card {
@@ -211,25 +345,43 @@
 }
 
 /* ini css bagian gambar  */
+/* ini css bagian gambar */
 .image-container {
-  width: 480px; left: 0px; top: 937px; position: absolute; justify-content: center; align-items: flex-end; gap: 25px; display: inline-flex;
+  width: 480px;
+  left: 0px;
+  top: 879px;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 25px;
+  display: inline-flex;
 }
 
 .image-container .image1 {
-  width: 332px; height: 194.02px;
+  width: 250px; /* Ubah nilai lebar sesuai yang Anda inginkan */
+  height: 146px; /* Ubah nilai tinggi sesuai yang Anda inginkan */
 }
 
 .image-container .image2 {
-  width: 380px; height: 224.34px;
+  width: 300px; /* Ubah nilai lebar sesuai yang Anda inginkan */
+  height: 156px; /* Ubah nilai tinggi sesuai yang Anda inginkan */
 }
 
 .image-container .image3 {
-  width: 332px; height: 202.41px;
+  width: 250px; /* Ubah nilai lebar sesuai yang Anda inginkan */
+  height: 152px; /* Ubah nilai tinggi sesuai yang Anda inginkan */
 }
+
 
 /* ini css untuk footer */
 .site-footer {
-  width: 480px; left: 0px; top: 1198px; position: absolute; justify-content: center; align-items: flex-end; display: inline-flex;
+  width: 480px; left: 0px; top: 1198px; bottom: 0; 
+  position: absolute; 
+  justify-content: center; 
+  align-items: flex-end; 
+  display: inline-flex;
+  bottom: 0;
+  z-index: 1;
 }
 
 .footer-menu-item {
@@ -248,3 +400,16 @@
   color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word;
 }
 
+
+.container-fasilitas-kesehatan {
+  width: 486px;
+  height: 360px;
+  top: 600px;
+  background: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  /* display: none; */
+}
