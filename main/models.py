@@ -20,13 +20,6 @@ class TranslatedMenu(models.Model):
     def __str__(self):
         return self.menu_name
 
-    def get_translation_by_code(self, code):
-        try:
-            translation = self.translations.get(language__code=code)
-            return translation.translation
-        except Translation.DoesNotExist:
-            return 'Translation not available'
-
 class Translation(models.Model):
     menu = models.ForeignKey(TranslatedMenu, on_delete=models.CASCADE)
     language = models.ForeignKey(LanguageChoice, on_delete=models.CASCADE)
