@@ -1,4 +1,6 @@
 {% extends 'main/base.html' %}
+{% load custom_filters %}
+
 {% load static %}
 {% block content %}
     <div class="container mt-5">
@@ -50,12 +52,25 @@
                     </div>
                     <div class="modal-body">
                         <div class="card-body">
-                            
+                            <ul>
+                               {% if selected_menu_id %}
+                                <h2>Menu ID: {{ selected_menu_id }}</h2>
+                                <ul>
+                                    {% for submenu in menu_submenus|dict_lookup:selected_menu_id %}
+                                    <li>{{ submenu.submenu_name }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <p>No menu selected.</p>
+                                {% endif %}
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
 
 
         <!-- Modal -->

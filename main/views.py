@@ -20,6 +20,7 @@ def translate(request):
     menus = TranslatedMenu.objects.all()
 
     menu_submenus = {}
+    selected_menu_id = '001'
 
     # translation based on the menu ID
     for menu in menus:
@@ -36,6 +37,8 @@ def translate(request):
         # Store the list of submenus in the menu_submenus dictionary
         menu_submenus[menu.menu_id] = submenus_list
 
+    print(menu_submenus)
+
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
         'languages': languages,
@@ -44,6 +47,7 @@ def translate(request):
         'menus': menus,
         'menu_translations': menu_translations,
         'menu_submenus': menu_submenus,
+        'selected_menu_id': selected_menu_id
     })
 
 
