@@ -31,6 +31,7 @@
                 {% for menu in menus %}
                 {% if menu.menu_name == menu_name %}
                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}"style="display: none;">Play</button>
+                <a href=""  class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalSubmenu">Open submenu</a>
                 <img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}">
                 {% endif %}
                 {% endfor %}
@@ -55,6 +56,23 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                         <a href="#" class="btn btn-primary buka-menu-button">Buka menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal submenu -->
+        <div class="modal fade" id="modalSubmenu" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalSubmenuLabel">Sub menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
