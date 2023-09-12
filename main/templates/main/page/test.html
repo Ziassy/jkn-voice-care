@@ -1,0 +1,319 @@
+<!-- {% load static %}
+{% load i18n %} -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Translator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../static/css/style.css">
+</head>
+<body>
+<div class="media">
+  <nav class="navbar">
+    <div class="navbar-custom-container">
+      <img style="width: 497.87px; height: 84.26px; left: 0px; top: 0px; position: absolute" src="../../../static/img/image_19-removebg-preview 2.png" />
+      <img style="width: 497.87px; height: 105.96px; left: 0px; top: 14.04px; position: absolute" src="../../../static/img/image_19-removebg-preview 1.png" />
+    </div>
+    <div class="navbar-body">
+      <div style="text-align: center; color: white; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 21px; word-wrap: break-word">v4.5.0</div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
+        <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.3351 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
+      </svg>
+    </div>
+  </nav>
+
+  
+  <header class="informasi-pengguna">
+    <div class="container">
+      <div class="greeting">
+        <div class="greeting-text">Hi, Kevin</div> 
+        <div class="icon-container">
+          <div class="icon-circle">
+            <div class="circle-outer"></div>
+            <div class="circle-inner"></div>
+          </div>
+          <div class="arrow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="topic-text"> Voice Care</div>
+      <div class="badge">
+        <div class="badge-inner">
+          <div class="badge-text">IDN</div>
+          <div class="badge-icon">
+            <div class="badge-icon-inner"></div>
+          </div>
+        </div>
+        <div class="status">
+          <div class="status-bar"></div>
+          <div class="status-dot"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="menu">
+    <div class="menu-item">
+      <div class="menu-item-content">  
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-image"> 
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 29.png">
+          </div>
+          <div class="info-card-title">Info Program JKN</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 20.png">
+          </div>
+          <div class="info-card-title">Info Lokasi Faskes</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 32.png">
+          </div>
+          <div class="info-card-title">Info Riwayat Pelayanan</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 31.png">
+          </div>
+          <div class="info-card-title">Rehab (Cicilan)</div>
+        </div>
+      </div>
+    </div>
+    <div style="left: 35px; top: 460px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex">
+      <div class="menu-item-content">  
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-image"> 
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 35.png">
+          </div>
+          <div class="info-card-title">Penambahan Peserta</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 36.png">
+          </div>
+          <div class="info-card-title">Info Peserta</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 42.png">
+          </div>
+          <div class="info-card-title">Pendaftaran Pelayanan (Antrean)</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 37.png">
+          </div>
+          <div class="info-card-title">Konsultasi Dokter</div>
+        </div>
+      </div>
+    </div>
+    <div style="left: 35px; top: 680px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex">
+      <div class="menu-item-content">  
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+        <div class="menu-icon">
+          <button type="button" class="custom-button" style="background: none; border: none; padding: 4px 8px; font-size: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+              <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+            </svg>
+            Putar
+          </button> 
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-image"> 
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 38.png">
+          </div>
+          <div class="info-card-title">Perubahan Data Peserta</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 39.png">
+          </div>
+          <div class="info-card-title">Pengaduan Layanan JKN</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 40.png">
+          </div>
+          <div class="info-card-title">Info Ketersediaan Tempat Tidur</div>
+        </div>
+        <div class="info-card-image">
+          <div class="info-card-bg">
+            <div class="info-card-avatar"></div>
+            <img class="info-card-details" src="../../../static/img/image 26.png">
+          </div>
+          <div class="info-card-title">Menu Lainnya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gambar">
+    <div class="image-container">
+      <img class="image1" src="../../../static/img/image 48.png">
+      <img class="image2" src="../../../static/img/image 50.png">
+      <img class="image3" src="../../../static/img/image 51.png">
+    </div>
+  </section>
+
+  <footer>
+    <div class="site-footer">
+      <div class="footer-menu-item">
+        <div class="home-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 27 24" fill="none">
+            <path d="M10.8 23.3687V15.3439H16.2V23.3687H22.95V12.669H27L13.5 0.631836L0 12.669H4.05V23.3687H10.8Z" fill="#0D85BC"></path>
+          </svg>
+          <div class="footer-menu-text">Home</div>
+        </div>
+        <div class="home-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M14.6667 18.6667H5.33333V16H14.6667M18.6667 13.3333H5.33333V10.6667H18.6667M18.6667 8H5.33333V5.33333H18.6667M21.3333 0H2.66667C1.18667 0 0 1.18667 0 2.66667V21.3333C0 22.0406 0.280951 22.7189 0.781048 23.219C1.28115 23.719 1.95942 24 2.66667 24H21.3333C22.0406 24 22.7189 23.719 23.219 23.219C23.719 22.7189 24 22.0406 24 21.3333V2.66667C24 1.95942 23.719 1.28115 23.219 0.781048C22.7189 0.280951 22.0406 0 21.3333 0Z" fill="#737373"></path>
+          </svg>
+          <div class="footer-menu-text1">Berita</div>
+        </div>
+      </div>
+      <div style="width: 76px; height: 108px; position: relative">
+        <div style="width: 76px; height: 69px; left: 0px; top: 39px; position: absolute; background: white; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+          <div style="align-self: stretch; height: 69px; padding-top: 4px; padding-bottom: 4px; background: white; justify-content: center; align-items: flex-end; display: inline-flex">
+            <div style="color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">Kartu</div>
+          </div>
+        </div>
+        <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute">
+          <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9999px"></div>
+          <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute">
+            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="77" viewBox="0 0 78 77" fill="none">
+              <path d="M77.5 39C77.5 33.8901 76.4828 28.8314 74.5077 24.1186C72.5326 19.4059 69.6391 15.1335 65.9959 11.5505C62.3527 7.96753 58.0326 5.14561 53.2877 3.2493C48.5427 1.35298 43.4677 0.420204 38.3585 0.505345C33.2493 0.590485 28.2082 1.69184 23.5291 3.7452C18.8499 5.79857 14.6263 8.76285 11.1045 12.4653C7.58273 16.1677 4.83319 20.5341 3.0162 25.31C1.19921 30.0859 0.351119 35.1758 0.521377 40.2828" stroke="#A3A3A3"></path>
+              <circle cx="39" cy="39" r="28" fill="#3786C6"></circle>
+              <path d="M50.2 27H27.8C26.246 27 25.014 28.2826 25.014 29.8824L25 47.1765C25 48.7762 26.246 50.0588 27.8 50.0588H50.2C51.754 50.0588 53 48.7762 53 47.1765V29.8824C53 28.2826 51.754 27 50.2 27ZM48.8 47.1765H29.2C28.43 47.1765 27.8 46.5279 27.8 45.7353V38.5294H50.2V45.7353C50.2 46.5279 49.57 47.1765 48.8 47.1765ZM50.2 32.7647H27.8V31.3235C27.8 30.5309 28.43 29.8824 29.2 29.8824H48.8C49.57 29.8824 50.2 30.5309 50.2 31.3235V32.7647Z" fill="#FAFAFA"></path>
+            </svg>                  
+          </div>
+        </div>
+      </div>
+      <div class="footer-menu-item">
+        <div class="home-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21.6 4.8H20.4V14.4C20.4 15.06 19.86 15.6 19.2 15.6H4.8V16.8C4.8 18.12 5.88 19.2 7.2 19.2H19.2L24 24V7.2C24 5.88 22.92 4.8 21.6 4.8ZM18 10.8V2.4C18 1.08 16.92 0 15.6 0H2.4C1.08 0 0 1.08 0 2.4V18L4.8 13.2H15.6C16.92 13.2 18 12.12 18 10.8Z" fill="#9E9E9E"></path>
+          </svg>
+          <div class="footer-menu-text1">FAQ</div>
+        </div>
+        <div class="home-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 22.36C9.75 22.36 6.877 20.696 5.2 18.2C5.239 15.6 10.4 14.17 13 14.17C15.6 14.17 20.761 15.6 20.8 18.2C19.123 20.696 16.25 22.36 13 22.36ZM13 3.9C14.0343 3.9 15.0263 4.31089 15.7577 5.04228C16.4891 5.77368 16.9 6.76566 16.9 7.8C16.9 8.83434 16.4891 9.82632 15.7577 10.5577C15.0263 11.2891 14.0343 11.7 13 11.7C11.9657 11.7 10.9737 11.2891 10.2423 10.5577C9.51089 9.82632 9.1 8.83434 9.1 7.8C9.1 6.76566 9.51089 5.77368 10.2423 5.04228C10.9737 4.31089 11.9657 3.9 13 3.9ZM13 0C11.2928 0 9.60235 0.336255 8.02512 0.989566C6.44788 1.64288 5.01477 2.60045 3.80761 3.80761C1.36964 6.24558 0 9.55219 0 13C0 16.4478 1.36964 19.7544 3.80761 22.1924C5.01477 23.3995 6.44788 24.3571 8.02512 25.0104C9.60235 25.6637 11.2928 26 13 26C16.4478 26 19.7544 24.6304 22.1924 22.1924C24.6304 19.7544 26 16.4478 26 13C26 5.811 20.15 0 13 0Z" fill="#9E9E9E"></path>
+          </svg>
+          <div class="footer-menu-text1">Profil</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

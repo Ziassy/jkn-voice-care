@@ -1,0 +1,250 @@
+.media {
+  width: 480px; height: 1306px; background: white
+}
+
+.navbar{
+  width: 497.87px; 
+  height: 120px; 
+  left: 0px; 
+  top: 0px; 
+  position: absolute;
+}
+
+.navbar-custom-container{
+  width: 497.87px; 
+  height: 120px; 
+  left: 0px; 
+  top: 0px; 
+  position: absolute;
+}
+
+.navbar-body {
+  width: 85px; 
+  height: 26.65px; 
+  left: 359px; 
+  top: 29px; 
+  position: absolute; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 16px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna {
+  width: 409px; 
+  padding-left: 12px; 
+  padding-right: 12px; 
+  padding-top: 8px; 
+  padding-bottom: 8px; 
+  left: 36px; 
+  top: 128px; 
+  position: absolute; 
+  background: white; 
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.20); 
+  border-radius: 12px; 
+  overflow: hidden; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 74px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna .container {
+  flex: 1 1 0; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 4px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna .greeting {
+  justify-content: center; 
+  align-items: center; 
+  gap: 8px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna .greeting-text {
+  color: black; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 700; 
+  word-wrap: break-word;
+}
+
+.informasi-pengguna .icon-container {
+  width: 18px; 
+  height: 18px; 
+  position: relative;
+}
+
+.informasi-pengguna .icon-circle {
+  width: 18px; 
+  height: 18px; 
+  left: 0px; 
+  top: 0px; 
+  position: absolute;
+}
+
+.informasi-pengguna .circle-outer {
+  width: 18px; 
+  height: 18px; 
+  left: 0px; 
+  top: 0px; 
+  position: absolute; 
+  background: white; 
+  border: 0.90px white solid;
+}
+
+.informasi-pengguna .circle-inner {
+  width: 8.10px; 
+  height: 5.40px; 
+  left: 5.40px; 
+  top: 6.30px; 
+  position: absolute; 
+  border: 0.90px black solid;
+}
+
+.informasi-pengguna .arrow {
+  width: 21.60px; 
+  height: 21.60px; 
+  left: -1.80px; 
+  top: -1.80px; 
+  position: absolute; 
+  background: #8EBE5B;
+}
+
+.informasi-pengguna .content {
+  padding-left: 10px; 
+  padding-right: 10px; 
+  padding-top: 6px; 
+  padding-bottom: 6px; 
+  border-radius: 8px; 
+  border: 0.50px #06B6D4 solid; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 8px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna .topic-text {
+  color: #06B6D4; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 600; 
+  word-wrap: break-word;
+}
+
+
+.informasi-pengguna .badge {
+  justify-content: center; 
+  align-items: center; 
+  gap: 12px; 
+  display: inline-flex;
+}
+
+.informasi-pengguna .badge-inner {
+  padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px; background: #06B6D4; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; gap: 4px; display: flex;
+}
+
+.informasi-pengguna .badge-text {
+  color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word;
+}
+
+.informasi-pengguna .badge-icon {
+  width: 16px; height: 16px; position: relative;
+}
+
+.informasi-pengguna .badge-icon-inner {
+  width: 12px; height: 7.20px; left: 2px; top: 4px; position: absolute; background: #FAFAFA;
+}
+
+.informasi-pengguna .status {
+  width: 40px; height: 20px; position: relative;
+}
+
+.informasi-pengguna .status-bar {
+  width: 40px; height: 14px; left: 0px; top: 3px; position: absolute; background: #0891B2; border-radius: 10px;
+}
+
+.informasi-pengguna .status-dot {
+  width: 20px; height: 20px; left: 20px; top: 0px; position: absolute; background: #FAFAFA; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.50); border-radius: 9999px;
+}
+
+/* ini css bagian menu  */
+.menu-item{
+  left: 35px; top: 257px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 14px; display: inline-flex;
+}
+
+.menu-item-content{
+  margin-right: 26px; justify-content: flex-start; align-items: flex-start; gap: 26px; display: inline-flex;
+}
+
+.menu-icon{
+  height: 25px; padding: 2px 15px; background: #06B6D4; border-radius: 12px; border: 0.5px #0891B2 solid; justify-content: center; align-items: center; gap: 4px; display: flex;
+}
+
+.menu .info-card {
+  margin-right: 30px; justify-content: flex-start; align-items: flex-start; gap: 35px; display: inline-flex;
+}
+
+.menu .info-card-image {
+  width: 80px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex;
+}
+
+.menu .info-card-bg {
+  align-self: stretch; height: 80px; position: relative;
+}
+
+.menu .info-card-avatar {
+  width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px;
+}
+
+.menu .info-card-details {
+  width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px;
+}
+
+.menu .info-card-title {
+  width: 87px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word;
+}
+
+/* ini css bagian gambar  */
+.image-container {
+  width: 480px; left: 0px; top: 937px; position: absolute; justify-content: center; align-items: flex-end; gap: 25px; display: inline-flex;
+}
+
+.image-container .image1 {
+  width: 332px; height: 194.02px;
+}
+
+.image-container .image2 {
+  width: 380px; height: 224.34px;
+}
+
+.image-container .image3 {
+  width: 332px; height: 202.41px;
+}
+
+/* ini css untuk footer */
+.site-footer {
+  width: 480px; left: 0px; top: 1198px; position: absolute; justify-content: center; align-items: flex-end; display: inline-flex;
+}
+
+.footer-menu-item {
+  flex: 1 1 0; height: 69px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: white; border-top: 0.50px #A3A3A3 solid; justify-content: center; align-items: center; gap: 50px; display: flex;
+}
+
+.home-icon{
+  flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex;
+}
+
+.footer-menu-text {
+  color: #0D85BC; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word;
+}
+
+.footer-menu-text1 {
+  color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word;
+}
+
