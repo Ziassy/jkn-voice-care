@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from gtts import gTTS
 import os
 from django.conf import settings
-from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu
+from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu, SubTranslation
 
 
 def translate(request):
@@ -16,6 +16,7 @@ def translate(request):
 
     # Create a dictionary to store translations for each menu
     menu_translations = {}
+    submenu_translations = {}
 
     menus = TranslatedMenu.objects.all()
     selected_menu_id = '001'
@@ -37,6 +38,18 @@ def translate(request):
         # Store the list of submenus in the menu_submenus dictionary
         menu_submenus[menu.menu_id] = submenus_list
 
+        # Translation for submenus based on the submenu ID
+        for menu in menus:
+            # Filter submenus for the current menu
+            submenus = SubMenu.objects.filter(menu_id=menu.menu_id)
+
+            for submenu in submenus:
+                submenu_translation = SubTranslation.objects.filter(
+                    submenu=submenu,
+                    language__code=selected_language
+                ).first()
+                submenu_translations[submenu.submenu_name] = submenu_translation.translation if submenu_translation else 'Translation not available'
+
     if request.method == 'GET':
         for menu_id, translation_text in menu_translations.items():
             if translation_text != 'Translation not available':
@@ -51,10 +64,23 @@ def translate(request):
                 audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
                 if os.path.exists(audio_path):
                     os.remove(audio_path)
-        print(menu_submenus)
-        print(menu_translations)
 
-    print(menu_submenus)
+        for submenu_id, submenu_translation_text in submenu_translations.items():
+            if submenu_translation_text != 'Translation not available':
+                # Use submenu ID as the audio file name for submenus
+                audio_filename = f'audio-submenu-{submenu_id}.mp3'
+                tts = gTTS(text=submenu_translation_text, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
+            else:
+                # Delete audio file if 'Translation not available'
+                audio_filename = f'audio-submenu-{submenu_id}.mp3'
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                if os.path.exists(audio_path):
+                    os.remove(audio_path)
+
+    print(submenu_translations)
+    print(menu_translations)
 
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
