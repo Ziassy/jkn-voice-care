@@ -18,9 +18,9 @@ def translate(request):
     menu_translations = {}
 
     menus = TranslatedMenu.objects.all()
+    selected_menu_id = '001'
 
     menu_submenus = {}
-    selected_menu_id = '001'
 
     # translation based on the menu ID
     for menu in menus:
@@ -36,6 +36,23 @@ def translate(request):
 
         # Store the list of submenus in the menu_submenus dictionary
         menu_submenus[menu.menu_id] = submenus_list
+
+    if request.method == 'GET':
+        for menu_id, translation_text in menu_translations.items():
+            if translation_text != 'Translation not available':
+                # Gunakan ID menu sebagai nama file audio
+                audio_filename = f'audio-{menu_id}.mp3'
+                tts = gTTS(text=translation_text, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
+            else:
+                # Hapus file audio jika terdapat teks 'Translation not available'
+                audio_filename = f'audio-{menu_id}.mp3'
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                if os.path.exists(audio_path):
+                    os.remove(audio_path)
+        print(menu_submenus)
+        print(menu_translations)
 
     print(menu_submenus)
 
