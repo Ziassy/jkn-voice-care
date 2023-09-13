@@ -4,48 +4,6 @@
 {% load static %}
 {% block content %}
     <div class="container mt-5">
-{% comment %} 
-        <h1>Menu List</h1>
-<ul>
-    {% for menu in menus %}
-    <li>{{ menu.menu_name }}</li>
-    <a href="" class="btn btn-success play open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }" data-submenu-id="{{ menu.menu_id }}">Open submenu</a>
-    <ul id="submenu-{{ menu.menu_id }}" class="submenu">
-        {% for submenu in menu.submenus.all %}
-        <li>{{ submenu.submenu_name }}</li>
-        <img src="{{ submenu.image_url }}" alt="{{ submenu.menu_name }}"  >
-        {% endfor %}
-    {% endfor %}
-</ul> {% endcomment %}
-
-        <h1>Menu List</h1>
-    {% for menu in menus %}
-    <li>{{ menu.menu_name }}</li>
-    <a href="" class="btn btn-success play open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}">Open submenu</a>
-    <!-- Modal submenu -->
-    <div class="modal fade submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalSubmenuLabel">Sub menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="card-body">
-                        <ul>
-                            {% for submenu in menu.submenus.all %}
-                            <li>{{ submenu.submenu_name }}</li>
-                            <img src="{{ submenu.image_url }}" alt="{{ submenu.menu_name }}"  >
-                            {% endfor %}
-                            <a href=""  class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#detail" data-submenu-id="#">Open detail</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
-    {% endfor %}
-
         <h1 class="mb-4">Language Translator</h1>
 
         <form method="get" class="mb-4">
@@ -65,7 +23,6 @@
 
         <div class="form-check form-switch mb-3">
             <input class="form-check-input" type="checkbox" id="toggleSwitch" {% if is_toggle_on %}checked{% endif %}>
-            <label class="form-check-label" for="toggleSwitch">Toggle On/Off</label>
         </div>
 
         {% for menu_name, translation in menu_translations.items %}
@@ -75,8 +32,30 @@
                 {% for menu in menus %}
                 {% if menu.menu_name == menu_name %}
                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}"style="display: none;">Play</button>
-                <a href=""  class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalSubmenu">Open submenu</a>
-                <img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}">
+                <a href="" class="open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+
+                <!-- Modal submenu -->
+                <div class="modal fade submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalSubmenuLabel">Sub menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <ul>
+                                        {% for submenu in menu.submenus.all %}
+                                        <li>{{ submenu.submenu_name }}</li>
+                                        <img src="{{ submenu.image_url }}" alt="{{ submenu.menu_name }}"  >
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- End Modal submenu -->
                 {% endif %}
                 {% endfor %}
                 <h5 class="card-title">{{ menu_name }}</h5>
@@ -85,7 +64,7 @@
         {% endfor %}
 
 
-        <!-- Modal -->
+        <!-- Modal translation -->
         <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -99,40 +78,10 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <a href="#" class="btn btn-primary buka-menu-button">Buka menu</a>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            // Sembunyikan semua submenu saat halaman dimuat pertama kali
-            const allSubmenus = document.querySelectorAll('.submenu');
-            allSubmenus.forEach(function (s) {
-                s.style.display = 'none';
-            });
-
-            const openSubmenuButtons = document.querySelectorAll('.open-submenu');
-
-            openSubmenuButtons.forEach(function (button) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const menuId = button.getAttribute('data-submenu-id');
-                    const submenu = document.getElementById(`submenu-${menuId}`);
-                    
-                    // hide semua submenu terlebih dahulu
-                    allSubmenus.forEach(function (s) {
-                        s.style.display = 'none';
-                    });
-                    
-                    // saat openSubmenuButtons di klik Tampilkan submenu yang sesuai
-                    submenu.style.display = 'block';
-                });
-            });
-        });
-
-</script>
-
-
+        <!-- End Modal translation -->
 
 {% endblock content %}

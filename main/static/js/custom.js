@@ -85,10 +85,39 @@ const playButtonClick = (e) => {
   }
 };
 
+const initializeSubmenus = () => {
+  // Sembunyikan semua submenu saat halaman dimuat pertama kali
+  const allSubmenus = document.querySelectorAll('.submenu');
+  allSubmenus.forEach(s => {
+    s.style.display = 'none';
+  });
+
+  const openSubmenuButtons = document.querySelectorAll('.open-submenu');
+
+  openSubmenuButtons.forEach(button => {
+    button.addEventListener('click', e => {
+      e.preventDefault();
+      const menuId = button.getAttribute('data-submenu-id');
+      const submenu = document.getElementById(`submenu-${menuId}`);
+
+      // hide semua submenu terlebih dahulu
+      allSubmenus.forEach(s => {
+        s.style.display = 'none';
+      });
+
+      // saat openSubmenuButtons di klik Tampilkan submenu yang sesuai
+      submenu.style.display = 'block';
+    });
+  });
+};
+
+
+
 document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
 document.getElementById('languageSelect').addEventListener('change', languageSelectChange);
 document.querySelectorAll('.play').forEach(button => {
   button.addEventListener('click', playButtonClick);
 });
+document.addEventListener('DOMContentLoaded', initializeSubmenus);
 
 loadToggleStatus();
