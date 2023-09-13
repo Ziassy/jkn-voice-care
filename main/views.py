@@ -64,7 +64,6 @@ def translate(request):
                     os.remove(audio_path)
 
     print(submenu_translations)
-    print(menu_translations)
 
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
@@ -73,6 +72,7 @@ def translate(request):
         'selected_code': selected_code,
         'menus': menus,
         'menu_translations': menu_translations,
+        'submenu_translations': submenu_translations
     })
 
 
