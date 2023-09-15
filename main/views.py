@@ -37,31 +37,19 @@ def translate(request):
 
     if request.method == 'GET':
         for menu_id, translation_text in menu_translations.items():
-            if translation_text != 'Translation not available':
+            if translation_text:
                 # Gunakan ID menu sebagai nama file audio
                 audio_filename = f'audio-{menu_id}.mp3'
                 tts = gTTS(text=translation_text, lang='id')
                 audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
                 tts.save(audio_path)
-            else:
-                # Hapus file audio jika terdapat teks 'Translation not available'
-                audio_filename = f'audio-{menu_id}.mp3'
-                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-                if os.path.exists(audio_path):
-                    os.remove(audio_path)
 
         for submenu_id, submenu_translation_text in submenu_translations.items():
-            if submenu_translation_text != 'Translation not available':
+            if submenu_translation_text:
                 audio_filename = f'audio-{submenu_id}.mp3'
                 tts = gTTS(text=submenu_translation_text, lang='id')
                 audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
                 tts.save(audio_path)
-            else:
-                # Delete audio file if 'Translation not available'
-                audio_filename = f'audio-{submenu_id}.mp3'
-                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-                if os.path.exists(audio_path):
-                    os.remove(audio_path)
 
     print(submenu_translations)
 
