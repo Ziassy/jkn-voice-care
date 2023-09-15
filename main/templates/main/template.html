@@ -61,32 +61,34 @@
                                 </div>
                             </div> 
                             <!-- End Modal submenu -->
+
+
+                            <!-- Modal translation -->
+                            <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p id="translationContent"></p>
+                                            <audio id="audioPlayer"></audio>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                            <a href="" class="btn btn-success open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}">Buka menu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Modal translation -->
                         {% endif %}
                     {% endfor %}
                     <h5 class="card-title">{{ menu_name }}</h5>
                 </div>
             </div>
+
         {% endfor %}
-
-
-        <!-- Modal translation -->
-        <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p id="translationContent"></p>
-                        <audio id="audioPlayer"></audio>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Modal translation -->
 
 
 {% endblock content %}
