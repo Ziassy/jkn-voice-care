@@ -8,6 +8,7 @@ class LanguageChoice(models.Model):
     def __str__(self):
         return self.name
 
+
 class TranslatedMenu(models.Model):
     menu_id = models.CharField(max_length=50, unique=True)
     menu_name = models.CharField(max_length=50)
@@ -20,6 +21,7 @@ class TranslatedMenu(models.Model):
     def __str__(self):
         return self.menu_name
 
+
 class Translation(models.Model):
     menu = models.ForeignKey(TranslatedMenu, on_delete=models.CASCADE)
     language = models.ForeignKey(LanguageChoice, on_delete=models.CASCADE)
@@ -27,7 +29,8 @@ class Translation(models.Model):
 
     def __str__(self):
         return f"{self.menu.menu_name} ({self.language.name})"
-    
+
+
 class SubMenu(models.Model):
     submenu_name = models.CharField(max_length=50)
     translation = models.ManyToManyField(
@@ -41,6 +44,7 @@ class SubMenu(models.Model):
     def __str__(self):
         return self.submenu_name
 
+
 class SubTranslation(models.Model):
     submenu = models.ForeignKey(SubMenu, on_delete=models.CASCADE)
     language = models.ForeignKey(LanguageChoice, on_delete=models.CASCADE)
@@ -50,4 +54,19 @@ class SubTranslation(models.Model):
         return f"{self.submenu.submenu_name} ({self.language.name})"
 
 
+class DetailSubMenu(models.Model):
+    submenu = models.ForeignKey(
+        SubMenu, on_delete=models.CASCADE, related_name='details')
+    title = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"Detail for {self.submenu.submenu_name}"
+
+
+class DetailSubMenuTranslation(models.Model):
+    detail_submenu = models.ForeignKey(DetailSubMenu, on_delete=models.CASCADE)
+    language = models.ForeignKey(LanguageChoice, on_delete=models.CASCADE)
+    translation = models.TextField()
+
+    def __str__(self):
+        return f"{self.detail_submenu} ({self.language.name})"
