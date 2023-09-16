@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from gtts import gTTS
 import os
 from django.conf import settings
@@ -64,10 +64,13 @@ def translate(request):
     })
 
 
-def menu_detail(request, menu_id):
+def menu_detail(request, detail_url):
     try:
-        menu = TranslatedMenu.objects.get(menu_id=menu_id)
-        return render(request, 'main/menu_detail.html', {'menu': menu})
-    except TranslatedMenu.DoesNotExist:
-        # Redirect to a list view if menu doesn't exist
+        submenu = get_object_or_404(SubMenu, detail_url=detail_url)
+        if submenu.submenu_name:
+            return render(request, 'main/menu_detail.html', {'submenu': submenu})
+        else:
+            print("Menu name is empty.")
+            return redirect('translate')
+    except SubMenu.DoesNotExist:
         return redirect('translate')

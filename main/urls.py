@@ -7,7 +7,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', views.translate, name='translate'),
-    path('menu/<str:menu_id>/', views.menu_detail, name='menu_detail'),
+    path('submenu/<str:detail_url>/', views.menu_detail, name='submenu_detail'),
 ]
 
 if settings.DEBUG:
