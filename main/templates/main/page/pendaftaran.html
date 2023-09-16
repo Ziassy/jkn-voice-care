@@ -6,293 +6,340 @@
   <link rel="icon" href="data:,">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <title>Pemberitahuan dengan Kotak</title>
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-  <style>
-    /* Mengatur lebar elemen dengan class "custom-width" menjadi 480px */
-    .custom-width {
-      width: 480px;
-      margin: 0 auto; /* Menengahkan elemen horizontal */
-    }
-  
-    /* Mengatur lebar gambar dengan class "custom-image-width" menjadi 480px */
-    .custom-image-width {
-      width: 480px;
-      height: auto; /* Menjaga aspek rasio gambar */
-      margin: 0 auto; /* Menengahkan elemen horizontal */
-    }
-  </style>
-  
+  <link rel="stylesheet" href="../../../static/css/pendaftaran.css">
 </head>
 <body>
-  <div style="width: 480px; height: 1306px; position: relative; background: white">
-    <div style="left: 35px; top: 257px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 18px; display: inline-flex">
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 28px; display: inline-flex">  
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+
+<div style="width: 480px; height: 1273px; position: relative; background: white">
+  <section class="faskes">
+    <div class="faskes-container">
+      <div class="faskes-info">
+        <div class="faskes-title">Faskes Tingkat Pertama</div>
+        <button class="faskes-button" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
+          <div class="faskes-button-label">Putar</div>
+        </button>
       </div>
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 28px; display: inline-flex">
-        <div style="width: 80px; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: inline-flex"> 
-          <div style="align-self: stretch; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 29.png" />
+      <div class="faskes-subcontainer">
+        <div class="faskes-info-container">
+          <div class="faskes-info-box">
+            <div class="faskes-name">RS. Indonesia Raya</div>
           </div>
-          <div style="width: 92px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Info Program JKN</div>
+          <div class="faskes-address-box" style="align-self: stretch; height: 90px; padding-left: 12px; padding-right: 12px; padding-top: 20px; padding-bottom: 20px; background: white; border-left: 2px #06B6D4 solid; border-top: 1px #06B6D4 solid; border-right: 2px #06B6D4 solid; border-bottom: 2px #06B6D4 solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: flex">
+            <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+              <img style="width: 18px; height: 18px" src="../../../static/img/image 44.png" />
+              <div class="faskes-address-details">
+                <div class="faskes-address-label">Alamat</div>
+                <div class="faskes-address-value">Jakarta Indonesia</div>
+              </div>
+            </div>
+            <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+              <img style="width: 18px; height: 18px" src="../../../static/img/image 45.png" />
+              <div class="faskes-address-details">
+                <div class="faskes-address-label">Telepon</div>
+                <div class="faskes-address-value">021 - xxxxxx</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div style="width: 80px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 20.png" />
-          </div>
-          <div style="align-self: stretch; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Info Lokasi Faskes</div>
-        </div>
-        <div style="width: 80px; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 77.30px; left: -1.82px; top: 1.82px; position: absolute" src="../../static/image 32.png" />
-          </div>
-          <div style="width: 87px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Info Riwayat Pelayanan</div>
-        </div>
-        <div style="width: 78px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 14px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 88.18px; height: 80.91px; left: -4.55px; top: 0px; position: absolute" src="../../static/image 31.png" />
-          </div>
-          <div style="width: 87px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Rehab (Cicilan)</div>
+        <div class="faskes-icon-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+          </svg>
         </div>
       </div>
     </div>
-    <div style="left: 35px; top: 470px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 18px; display: inline-flex">
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 28px; display: inline-flex">  
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-      </div>
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 30px; display: inline-flex"> 
-        <div style="width: 80px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex"> 
-          <div style="align-self: stretch; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 35.png" />
-          </div>
-          <div style="width: 100px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Penambahan Peserta</div>
-        </div>
-        <div style="width: 80px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 36.png" />
-          </div>
-          <div style="text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Info Peserta</div>
-        </div>
-        <div style="width: 81px; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 42.png" />
-          </div>
-          <div style="width: 88px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Pendaftaran Pelayanan (Antrean) </div>
-        </div>
-        <div style="width: 78px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 37.png" />
-          </div>
-          <div style="width: 88px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Konsultasi Dokter</div>
-        </div>
-      </div>
-    </div>
-    <div style="left: 35px; top: 701px; position: absolute; flex-direction: column; justify-content: center; align-items: center; gap: 19px; display: inline-flex">
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 28px; display: inline-flex">
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-        <div style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 18px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 0.50px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-          </svg>
-          <div style="text-align: center; color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">Putar</div>
-        </div>
-      </div>
-      <div style="justify-content: flex-start; align-items: flex-start; gap: 30px; display: inline-flex">
-        <div style="width: 80px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 38.png" />
-          </div>
-          <div style="width: 100px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Perubahan Data Peserta</div>
-        </div>
-        <div style="width: 80px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 39.png" />
-          </div>
-          <div style="width: 91px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Pengaduan Layanan JKN</div>
-        </div>
-        <div style="width: 81px; flex-direction: column; justify-content: center; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 40.png" />
-          </div>
-          <div style="width: 94px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Info Ketersediaan Tempat Tidur</div>
-        </div>
-        <div style="width: 78px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
-          <div style="width: 80px; height: 80px; position: relative">
-            <div style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
-            <img style="width: 80px; height: 80px; left: 0px; top: 0px; position: absolute; border-radius: 51.50px" src="../../static/image 26.png" />
-          </div>
-          <div style="width: 98px; text-align: center; color: black; font-size: 13px; font-family: Poppins; font-weight: 400; line-height: 19.50px; word-wrap: break-word">Menu Lainnya</div>
-        </div>
-      </div>
-    </div>
-    <div style="width: 497.87px; height: 120px; left: 0px; top: 0px; position: absolute">
-      <div style="width: 497.87px; height: 120px; left: 0px; top: 0px; position: absolute">
-        <img style="width: 497.87px; height: 84.26px; left: 0px; top: 0px; position: absolute" src="../../static/image_19-removebg-preview 2.png" />
-        <img style="width: 497.87px; height: 105.96px; left: 0px; top: 14.04px; position: absolute" src="../../static/image_19-removebg-preview 1.png" />
-      </div>
-      <div style="width: 85px; height: 26.65px; left: 359px; top: 29px; position: absolute; justify-content: center; align-items: center; gap: 16px; display: inline-flex">
-        <div style="text-align: center; color: white; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 21px; word-wrap: break-word">v4.5.0</div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
-          <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.3351 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
+  </section>
+
+  <!-- popup faskes -->
+  <div class="popup-faskes">
+    <div style="width: 300px; height: 13px; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex; background-color: antiquewhite;">
+      <div style="height: 13px; padding-left: 8px; padding-right: 8px; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="none">
+          <path d="M24 0L47.5 13H24H0.500004L24 0Z" fill="#FAFAFA"/>
         </svg>
       </div>
     </div>
-    <div style="width: 480px; left: 0px; top: 937px; position: absolute; justify-content: center; align-items: flex-end; gap: 25px; display: inline-flex">
-      <img style="width: 332px; height: 194.02px" src="../../static/image 48.png" />
-      <img style="width: 380px; height: 224.34px" src="../../static/image 50.png" />
-      <img style="width: 332px; height: 202.41px" src="../../static/image 51.png" />
+    <div style="width: 302px; height: 37px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: #FAFAFA; border-top-left-radius: 8px; border-top-right-radius: 8px; justify-content: flex-start; align-items: center; display: inline-flex">
+      <div style="flex: 1 1 0; text-align: center; color: #171717; font-size: 14px; font-family: Poppins; font-weight: 600; line-height: 21px; word-wrap: break-word">Pilih Faskes</div>
     </div>
-    <div style="width: 480px; left: 0px; top: 1198px; position: absolute; justify-content: center; align-items: flex-end; display: inline-flex">
-      <div style="flex: 1 1 0; height: 69px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: white; border-top: 0.50px #A3A3A3 solid; justify-content: center; align-items: center; gap: 50px; display: flex">
-        <div style="flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 27 24" fill="none">
-            <path d="M10.8 23.3687V15.3439H16.2V23.3687H22.95V12.669H27L13.5 0.631836L0 12.669H4.05V23.3687H10.8Z" fill="#0D85BC"/>
-          </svg>
-          <div style="color: #0D85BC; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">Home</div>
-        </div>
-        <div style="flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M14.6667 18.6667H5.33333V16H14.6667M18.6667 13.3333H5.33333V10.6667H18.6667M18.6667 8H5.33333V5.33333H18.6667M21.3333 0H2.66667C1.18667 0 0 1.18667 0 2.66667V21.3333C0 22.0406 0.280951 22.7189 0.781048 23.219C1.28115 23.719 1.95942 24 2.66667 24H21.3333C22.0406 24 22.7189 23.719 23.219 23.219C23.719 22.7189 24 22.0406 24 21.3333V2.66667C24 1.95942 23.719 1.28115 23.219 0.781048C22.7189 0.280951 22.0406 0 21.3333 0Z" fill="#737373"/>
-          </svg>
-          <div style="color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">Berita</div>
-        </div>
-      </div>
-      <div style="width: 76px; height: 108px; position: relative">
-        <div style="width: 76px; height: 69px; left: 0px; top: 39px; position: absolute; background: white; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-          <div style="align-self: stretch; height: 69px; padding-top: 4px; padding-bottom: 4px; background: white; justify-content: center; align-items: flex-end; display: inline-flex">
-            <div style="color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">Kartu</div>
-          </div>
-        </div>
-        <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute">
-          <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9999px"></div>
-          <div style="width: 76px; height: 76px; left: 0px; top: 0px; position: absolute">
-            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="77" viewBox="0 0 78 77" fill="none">
-              <path d="M77.5 39C77.5 33.8901 76.4828 28.8314 74.5077 24.1186C72.5326 19.4059 69.6391 15.1335 65.9959 11.5505C62.3527 7.96753 58.0326 5.14561 53.2877 3.2493C48.5427 1.35298 43.4677 0.420204 38.3585 0.505345C33.2493 0.590485 28.2082 1.69184 23.5291 3.7452C18.8499 5.79857 14.6263 8.76285 11.1045 12.4653C7.58273 16.1677 4.83319 20.5341 3.0162 25.31C1.19921 30.0859 0.351119 35.1758 0.521377 40.2828" stroke="#A3A3A3"/>
-              <circle cx="39" cy="39" r="28" fill="#3786C6"/>
-              <path d="M50.2 27H27.8C26.246 27 25.014 28.2826 25.014 29.8824L25 47.1765C25 48.7762 26.246 50.0588 27.8 50.0588H50.2C51.754 50.0588 53 48.7762 53 47.1765V29.8824C53 28.2826 51.754 27 50.2 27ZM48.8 47.1765H29.2C28.43 47.1765 27.8 46.5279 27.8 45.7353V38.5294H50.2V45.7353C50.2 46.5279 49.57 47.1765 48.8 47.1765ZM50.2 32.7647H27.8V31.3235C27.8 30.5309 28.43 29.8824 29.2 29.8824H48.8C49.57 29.8824 50.2 30.5309 50.2 31.3235V32.7647Z" fill="#FAFAFA"/>
-            </svg>                  
-          </div>
-        </div>
-      </div>
-      <div style="flex: 1 1 0; height: 71px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; background: white; border-top: 0.50px #A3A3A3 solid; justify-content: center; align-items: center; gap: 50px; display: flex">
-        <div style="flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M21.6 4.8H20.4V14.4C20.4 15.06 19.86 15.6 19.2 15.6H4.8V16.8C4.8 18.12 5.88 19.2 7.2 19.2H19.2L24 24V7.2C24 5.88 22.92 4.8 21.6 4.8ZM18 10.8V2.4C18 1.08 16.92 0 15.6 0H2.4C1.08 0 0 1.08 0 2.4V18L4.8 13.2H15.6C16.92 13.2 18 12.12 18 10.8Z" fill="#9E9E9E"/>
-          </svg>
-          <div style="color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">FAQ</div>
-        </div>
-        <div style="flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-            <path d="M13 22.36C9.75 22.36 6.877 20.696 5.2 18.2C5.239 15.6 10.4 14.17 13 14.17C15.6 14.17 20.761 15.6 20.8 18.2C19.123 20.696 16.25 22.36 13 22.36ZM13 3.9C14.0343 3.9 15.0263 4.31089 15.7577 5.04228C16.4891 5.77368 16.9 6.76566 16.9 7.8C16.9 8.83434 16.4891 9.82632 15.7577 10.5577C15.0263 11.2891 14.0343 11.7 13 11.7C11.9657 11.7 10.9737 11.2891 10.2423 10.5577C9.51089 9.82632 9.1 8.83434 9.1 7.8C9.1 6.76566 9.51089 5.77368 10.2423 5.04228C10.9737 4.31089 11.9657 3.9 13 3.9ZM13 0C11.2928 0 9.60235 0.336255 8.02512 0.989566C6.44788 1.64288 5.01477 2.60045 3.80761 3.80761C1.36964 6.24558 0 9.55219 0 13C0 16.4478 1.36964 19.7544 3.80761 22.1924C5.01477 23.3995 6.44788 24.3571 8.02512 25.0104C9.60235 25.6637 11.2928 26 13 26C16.4478 26 19.7544 24.6304 22.1924 22.1924C24.6304 19.7544 26 16.4478 26 13C26 5.811 20.15 0 13 0Z" fill="#9E9E9E"/>
-          </svg>
-          <div style="color: #737373; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 21px; word-wrap: break-word">Profil</div>
-        </div>
-      </div>
+    <div style="width: 302px; height: 88px; padding-left: 10px; padding-right: 10px; padding-top: 8px; padding-bottom: 8px; background: #FAFAFA; justify-content: center; align-items: flex-start; display: inline-flex">
+      <div style="flex: 1 1 0; color: #171717; font-size: 12px; font-family: Poppins; font-weight: 400; line-height: 18px; word-wrap: break-word">Anda dapat memilih Faskes tingkat pertama disini. Namun, jika peserta hanya memiliki 1 fasilitas tingkat kesehatan. Maka peserta tidak bisa merubahnya.</div>
     </div>
-    <div style="width: 409px; padding-left: 12px; padding-right: 12px; padding-top: 8px; padding-bottom: 8px; left: 36px; top: 128px; position: absolute; background: white; box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.20); border-radius: 12px; overflow: hidden; justify-content: flex-start; align-items: center; gap: 74px; display: inline-flex">
-      <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-        <div style="justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-          <div style="color: black; font-size: 16px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Hi, Kevin</div>
-          <div style="width: 18px; height: 18px; position: relative">
-            <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute">
-              <div style="width: 18px; height: 18px; left: 0px; top: 0px; position: absolute; background: white; border: 0.90px white solid"></div>
-              <div style="width: 8.10px; height: 5.40px; left: 5.40px; top: 6.30px; position: absolute; border: 0.90px black solid"></div>
-            </div>
-            <div style="width: 21.60px; height: 21.60px; left: -1.80px; top: -1.80px; position: absolute; background: #8EBE5B"></div>
-          </div>
-        </div>
-      </div>
-      <div style="padding-left: 10px; padding-right: 10px; padding-top: 6px; padding-bottom: 6px; border-radius: 8px; border: 0.50px #06B6D4 solid; flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-        <div style="color: #06B6D4; font-size: 16px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Voice Care</div>
-        <div style="justify-content: center; align-items: center; gap: 12px; display: inline-flex">
-          <div style="padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px; background: #06B6D4; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; gap: 4px; display: flex">
-            <div style="color: #FAFAFA; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 21px; word-wrap: break-word">IDN</div>
-            <div style="width: 16px; height: 16px; position: relative">
-              <div style="width: 12px; height: 7.20px; left: 2px; top: 4px; position: absolute; background: #FAFAFA"></div>
-            </div>
-          </div>
-          <div style="width: 40px; height: 20px; position: relative">
-            <div style="width: 40px; height: 14px; left: 0px; top: 3px; position: absolute; background: #0891B2; border-radius: 10px"></div>
-            <div style="width: 20px; height: 20px; left: 20px; top: 0px; position: absolute; background: #FAFAFA; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.50); border-radius: 9999px"></div>
-          </div>
-        </div>
+    <div style="width: 302px; height: 40px; padding-top: 4px; padding-bottom: 10px; padding-left: 16px; padding-right: 16px; background: #FAFAFA; border-top-left-radius: 8px; border-top-right-radius: 8px; justify-content: center; align-items: center; gap: 18px; display: inline-flex">
+      <div style="height: 26px; padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px; border-radius: 4px; overflow: hidden; border: 1.50px #EF4444 solid; justify-content: center; align-items: center; gap: 4px; display: flex">
+        <div style="color: #EF4444; font-size: 12px; font-family: Poppins; font-weight: 500; line-height: 18px; word-wrap: break-word">Tutup</div>
       </div>
     </div>
   </div>
-  </form>
+
+  
+
+  <!-- Peserta -->
+  <section class="peserta">
+    <div class="peserta-header">
+      <div class="peserta-title">Peserta</div>
+      <button type="button" class="custom-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+          <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+        </svg>
+        <div class="participiant-text">Putar</div>
+      </button>
+    </div>
+    <div class="peserta-info-container">
+      <div class="peserta-item">
+        <div class="peserta-info">
+          <div class="peserta-name-info">
+            <div class="peserta-name">Jamal (0000xxxxxxx)</div>
+          </div>
+          <div class="peserta-icon-placeholder"></div>
+          <div class="peserta-icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- popup peserta-->
+      <div class="formulir-peserta">
+        <div class="container-penunjuk-peserta">
+          <div class="container-penunjuk-peserta-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="none" style="background-color: black;">
+              <path d="M24 0L47.5 13H24H0.500004L24 0Z" fill="#FAFAFA"/>
+            </svg>
+          </div>
+        </div>
+        <div class="formulir-header">
+          <div class="formulir-title">Formulir Peserta</div>
+        </div>
+        <div class="formulir-description">
+          <div class="formulir-description-text">Silahkan pilih peserta yang ingin di daftarkan disini.</div>
+        </div>
+        <div class="formulir-button-container">
+          <button type="button" class="formulir-button">
+            <div class="formulir-button-text">Tutup</div>
+          </button>
+        </div>
+        <div class="formulir-rotate-element"></div>
+      </div>
+    
+  <!-- poli -->
+  <section class="poli">
+    <div class="poli-container">
+      <div class="poli-header">
+        <div class="poli-title">Pilih Poli</div>
+        <button class="poli-button" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+          </svg>
+          <div class="poli-button-text">Putar</div>
+        </button>
+      </div>
+      <div class="poli-item-container">
+        <div class="poli-item-wrapper">
+          <div class="poli-item-content">
+            <div class="poli-item-text">
+              <div class="poli-text">POLI UMUM</div>
+            </div>
+            <div style="width: 24px; height: 24px; position: relative"></div>
+            <div style="width: 24px; height: 24px; position: relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- popup poli-->
+  <section class="popup-poli" id="popuppoli">
+    <div class="popup-container">
+      <div class="popup-title">
+        <div class="title-text">Pilih Poli</div>
+      </div>
+      <div class="popup-description">Silahkan pilih jenis poli yang ingin Anda kunjungi.</div>
+      <div class="tutup-selanjutnya">
+        <button type="button" class="tutup">
+          <div class="inner-tutup">Tutup</div>
+        </button>
+      </div>
+      <div class="row transparent-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="FFD1D1">
+          <path d="M24 13L47.5 0H24H0.500004L24 13Z" fill="rgb(170, 170, 170)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="tanggal-daftar">
+    <div class="tanggal-daftar-container">
+      <div class="tanggal-daftar-header">
+        <div class="tanggal-daftar-title">Pilih Tanggal Daftar</div>
+        <button class="tanggal-daftar-button" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+          </svg>
+          <div class="tanggal-daftar-button-text">Putar</div>
+        </button>
+      </div>
+      <div class="tanggal-daftar-info-container">
+        <div class="tanggal-daftar-item">
+          <div class="tanggal-daftar-info">
+            <div class="tanggal-daftar-date-info">
+              <div class="tanggal-daftar-date">Hari ini (16-08-2023)</div>
+            </div>
+            <div class="tanggal-daftar-icon-placeholder"></div>
+            <div class="tanggal-daftar-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- popup tanggal daftar-->
+  <section class="popuptanggaldaftar" id="tanggaldaftar">
+    <div class="popup-container">
+      <div class="popup-title">
+        <div class="title-text">Pilih Tanggal Daftar</div>
+      </div>
+      <div class="popup-description">Anda dapat memilih tanggal pendaftaraan disini.</div>
+      <div class="tutup-selanjutnya">
+        <button type="button" class="tutup">
+          <div class="inner-tutup">Tutup</div>
+        </button>
+      </div>
+      <div class="row transparent-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="FFD1D1">
+          <path d="M24 13L47.5 0H24H0.500004L24 13Z" fill="rgb(170, 170, 170)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="jadwal">
+    <div class="jadwal-container">
+      <div class="jadwal-header">
+        <div class="jadwal-title">Pilih Jadwal</div>
+        <button class="jadwal-button" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+          </svg>
+          <div class="jadwal-button-text">Putar</div>
+        </button>
+      </div>
+      <div class="jadwal-info-container">
+        <div class="jadwal-item">
+          <div class="jadwal-info">
+            <div class="jadwal-date-info">
+              <div class="jadwal-date">Pilih Jadwal</div>
+            </div>
+            <div class="jadwal-icon-placeholder"></div>
+            <div class="jadwal-icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- popup jadwal -->
+  <section class="popupjadwal" id="jadwal">
+    <div class="popup-container">
+      <div class="popup-title">
+        <div class="title-text">Pilih Jadwal</div>
+      </div>
+      <div class="popup-description">Silahkan pilih jadwal yang tersedia, Anda diharapkan dapat datang 15 menit sebelum pemeriksaan.</div>
+      <div class="tutup-selanjutnya">
+        <button type="button" class="tutup">
+          <div class="inner-tutup">Tutup</div>
+        </button>
+      </div>
+      <div class="row transparent-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="FFD1D1">
+          <path d="M24 13L47.5 0H24H0.500004L24 13Z" fill="rgb(170, 170, 170)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="info">
+    <div class="info-container">
+      <div class="info-text">*) Pendaftaran melalui aplikasi Mobile-JKN dibuka 24 jam sebelum jam buka operasional dan ditutup 1 jam sebelum jam tutup operasional</div>
+    </div>
+  </section>
+  
+  <section class="keluhan">
+    <div class="keluhan-container">
+      <div class="keluhan-header" style="align-self: stretch; justify-content: center; align-items: center; display: inline-flex">
+        <div class="keluhan-title" style="flex: 1 1 0; color: #06B6D4; font-size: 18px; font-family: Poppins; font-weight: 500; line-height: 27px; word-wrap: break-word">Keluhan</div>
+        <button class="keluhan-button" type="button" style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 1px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
+            <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+          </svg>
+          <div class="keluhan-button-text">Putar</div>
+        </button>
+      </div>
+      <div class="keluhan-input-container">
+        <div class="keluhan-input-wrapper">
+          <div class="keluhan-input-divider"></div>
+          <div class="keluhan-input-text">
+            <div class="keluhan-text">Silahkan isi keluhan . . .</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- popup keluhanl -->
+  <section class="popupkeluhan" id="keluhan">
+    <div class="popup-container">
+      <div class="popup-title">
+        <div class="title-text">Keluhan</div>
+      </div>
+      <div class="popup-description">Anda dapat menambahkan informasi gejala yang dirasakan, seperti mengalami mual, pusing, batuk atau yang lainnya. Bisa Anda keluhkan disini</div>
+      <div class="tutup-selanjutnya">
+        <button type="button" class="tutup">
+          <div class="inner-tutup">Tutup</div>
+        </button>
+      </div>
+      <div class="row transparent-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="FFD1D1">
+          <path d="M24 13L47.5 0H24H0.500004L24 13Z" fill="rgb(170, 170, 170)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+  <button type="button" style="width: 411px; padding-left: 12px; padding-right: 12px; padding-top: 18px; padding-bottom: 18px; left: 35px; top: 1097px; position: absolute; background-color: #0E7490; border-radius: 22px; overflow: hidden; justify-content: center; align-items: center; gap: 4px; display: inline-flex">
+    <div style="color: #FAFAFA; font-size: 20px; font-family: Poppins; font-weight: 700; line-height: 25px; word-wrap: break-word">Simpan</div>
+  </button>
+
+  <nav class="navbar">
+    <img class="navbar-logo" src="../../../static/img/image 444.png" />
+    <div class="navbar-content">
+      <div class="navbar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <path d="M13.0666 4.26375L6.43395 10.8964L5.58039 11.75H6.7875H21.5V13.25H6.7875H5.58192L6.43363 14.1032L13.0557 20.7372L12 21.7929L2.70711 12.5L12.0012 3.20586L13.0666 4.26375Z" fill="#FAFAFA" stroke="#FAFAFA"/>
+        </svg>
+      </div>
+      <div class="navbar-title">Fasilitas Kesehatan Tingkat Pertama</div>
+    </div>
+  </nav>
+</div>
+
 </body>
 </html>
