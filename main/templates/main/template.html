@@ -28,7 +28,7 @@
         {% for menu_name, translation in menu_translations.items %}
             <div class="card">
                 <div class="card-body">
-                    <p class="translation" hidden>{{ translation|default:"Translation not available"|safe }}</p>
+                    <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
                     {% for menu in menus %}
                         {% if menu.menu_name == menu_name %}
                             <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}" style="display: none;">Play</button>
@@ -57,7 +57,7 @@
                                                    {% for submenu in menu.submenus.all %}
                                                         <li>
                                                             {% with submenu_translations|get_subtranslation:submenu.submenu_name as submenu_translation %}
-                                                                <p class="translation" hidden>{{ submenu_translation|default:"Translation not available"|safe }}</p>
+                                                                <p class="translation" hidden>{{ submenu_translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
                                                                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ submenu_translation }}" data-menu-id="{{ submenu.submenu_name }}" data-menu-name="{{ submenu.submenu_name }}" style="display: none;">Play</button>
                                                             {% endwith %}
                                                             {{ submenu.submenu_name }}

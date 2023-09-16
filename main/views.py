@@ -23,7 +23,7 @@ def translate(request):
     # translation based on the menu ID
     for menu in menus:
         translation = translations.filter(menu__menu_id=menu.menu_id).first()
-        menu_translations[menu.menu_name] = translation.translation if translation else 'Translation not available'
+        menu_translations[menu.menu_name] = translation.translation if translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
 
         # Filter submenus for the current menu
         submenus = SubMenu.objects.filter(menu_id=menu.menu_id)
@@ -33,7 +33,7 @@ def translate(request):
                 submenu=submenu,
                 language__code=selected_language
             ).first()
-            submenu_translations[submenu.submenu_name] = submenu_translation.translation if submenu_translation else 'Translation not available'
+            submenu_translations[submenu.submenu_name] = submenu_translation.translation if submenu_translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
 
     if request.method == 'GET':
         for menu_id, translation_text in menu_translations.items():
