@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from gtts import gTTS
 import os
 from django.conf import settings
-from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu, SubTranslation
+from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu, SubTranslation, DetailSubMenu
 
 
 def translate(request):
@@ -51,8 +51,6 @@ def translate(request):
                 audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
                 tts.save(audio_path)
 
-    print(submenu_translations)
-
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
         'languages': languages,
@@ -68,12 +66,17 @@ def submenu_detail(request, detail_url):
     try:
         submenu = get_object_or_404(SubMenu, detail_url=detail_url)
         if submenu.submenu_name:
-            return render(request, 'main/submenu_detail.html', {'submenu': submenu})
+            # Assuming you have a query to get detail_submenu data, replace 'your_query_here' with your actual query
+            detail_submenu = DetailSubMenu.objects.filter(submenu=submenu)
+            print(detail_submenu)
+            return render(request, 'main/submenu_detail.html', {'submenu': submenu, 'detail_submenu': detail_submenu})
         else:
             print("Sub Menu name is empty.")
             return redirect('translate')
     except SubMenu.DoesNotExist:
         return redirect('translate')
+
+
 
 
 def menu_detail(request, detail_url):

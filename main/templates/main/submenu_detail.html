@@ -7,5 +7,15 @@
 </head>
 <body>
     <a href="{% url 'translate' %}" class="btn btn-primary">Back to Menu List {{ submenu.submenu_name }}</a>
+    
+    {% for detail in detail_submenu %}
+        <p>Nama title detail: {{ detail.title }}</p>
+        
+        {% if detail.title == 'Peserta' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalDetailSubMenuTranslation" data-translation="{{ detail.translation }}" data-menu-id="{{ detail.menu_id }}" data-menu-name="{{ detail.menu_name }}">Play</button>
+        {% elif detail.title == 'Faskes Tingkat Pertama' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalDetailSubMenuTranslation" data-translation="{{ detail.translation }}" data-menu-id="{{ detail.menu_id }}" data-menu-name="{{ detail.menu_name }}">Play</button>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>
