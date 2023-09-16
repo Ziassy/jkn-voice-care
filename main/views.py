@@ -70,7 +70,19 @@ def submenu_detail(request, detail_url):
         if submenu.submenu_name:
             return render(request, 'main/submenu_detail.html', {'submenu': submenu})
         else:
-            print("Menu name is empty.")
+            print("Sub Menu name is empty.")
             return redirect('translate')
     except SubMenu.DoesNotExist:
+        return redirect('translate')
+
+
+def menu_detail(request, detail_url):
+    try:
+        menu = get_object_or_404(TranslatedMenu, detail_url=detail_url)
+        if menu.menu_name:
+            return render(request, 'main/menu_detail.html', {'menu': menu})
+        else:
+            print("Menu name is empty.")
+            return redirect('translate')
+    except TranslatedMenu.DoesNotExist:
         return redirect('translate')

@@ -37,7 +37,7 @@
                                 {% if menu.submenus.count > 0 %}
                                     <a href="" class="open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
                                 {% else %}
-                                    <a href="#"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                                    <a href="{% url 'menu_detail' detail_url=menu.detail_url %}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
                                 {% endif %}
                             {% else %}
                                 <a href="{% url 'notfound' %}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
