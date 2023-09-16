@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ submenu.submenu_name }} Detail</title>
-</head>
-<body>
-    <a href="{% url 'translate' %}" class="btn btn-primary">Back to Menu List {{ submenu.submenu_name }}</a>
+{% extends 'main/base.html' %}
+{% load custom_filters %}
+
+{% load static %}
+{% block content %}
+    <button class="btn btn-primary" onclick="goBack()">Back to Menu List {{ submenu.submenu_name }}</button>
     
     {% for detail in detail_submenu %}
         <p>Nama title detail: {{ detail.title }}</p>
@@ -17,5 +14,5 @@
             <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modalDetailSubMenuTranslation" data-translation="{{ detail.translation }}" data-menu-id="{{ detail.menu_id }}" data-menu-name="{{ detail.menu_name }}">Play</button>
         {% endif %}
     {% endfor %}
-</body>
-</html>
+
+{% endblock content %}

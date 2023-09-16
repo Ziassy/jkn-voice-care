@@ -105,6 +105,9 @@ const initializeSubmenus = () => {
   });
 };
 
+const goBack = () => {
+  window.history.back();
+}
 
 
 document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
