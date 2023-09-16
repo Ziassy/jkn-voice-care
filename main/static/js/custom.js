@@ -77,12 +77,6 @@ const playButtonClick = (e) => {
   audioPlayer.src = audioURL;
   audioPlayer.play();
 
-
-  const menuDetailLink = document.querySelector('.buka-menu-button');
-
-  if (menuDetailLink) {
-    menuDetailLink.href = detailURL;
-  }
 };
 
 const initializeSubmenus = () => {
