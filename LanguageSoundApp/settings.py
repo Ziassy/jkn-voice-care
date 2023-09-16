@@ -62,6 +62,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',  # i18n Middleware
 ]
+# Atau sesuaikan dengan backend sesi yang Anda pilih
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'languangeApp'
 
 ROOT_URLCONF = 'LanguageSoundApp.urls'
 

@@ -62,10 +62,11 @@
                                                             {% endwith %}
                                                             {{ submenu.submenu_name }}
                                                             {% if submenu.detail_url %}
-                                                                <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                                                <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                                             {% else %}
-                                                                <a href="{% url 'notfound' %}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                                                <a href="{% url 'notfound' %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                                             {% endif %}
+
                                                         </li>
                                                     {% endfor %}
                                                 </ul>

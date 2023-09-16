@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from gtts import gTTS
 import os
 from django.conf import settings
-from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu, SubTranslation, DetailSubMenu
+from django.urls import reverse
+from .models import LanguageChoice, TranslatedMenu, Translation, SubMenu, SubTranslation, DetailSubMenu, DetailSubMenuTranslation
 
 
 def translate(request):
@@ -11,6 +12,7 @@ def translate(request):
     selected_language = request.GET.get('language', 'id')
 
     selected_code = selected_language
+    request.session['selected_code'] = selected_code
 
     translations = Translation.objects.filter(language__code=selected_language)
 
@@ -66,17 +68,38 @@ def submenu_detail(request, detail_url):
     try:
         submenu = get_object_or_404(SubMenu, detail_url=detail_url)
         if submenu.submenu_name:
-            # Assuming you have a query to get detail_submenu data, replace 'your_query_here' with your actual query
             detail_submenu = DetailSubMenu.objects.filter(submenu=submenu)
-            print(detail_submenu)
-            return render(request, 'main/submenu_detail.html', {'submenu': submenu, 'detail_submenu': detail_submenu})
+
+            # Get the selected_language from the session or use 'id' as default
+            selected_language = request.GET.get('language', 'id')
+            selected_code = request.session.get('selected_code', 'id')
+
+            # Build the URL with the selected_language query parameter
+            redirect_url = reverse('submenu_detail', kwargs={
+                                   'detail_url': detail_url}) + f'?language={selected_language}'
+
+            detail_submenu_translations = {}
+
+            for ds in detail_submenu:
+                translation = DetailSubMenuTranslation.objects.filter(
+                    detail_submenu=ds,
+                    language__code=selected_language
+                ).first()
+                detail_submenu_translations[ds.title] = translation.translation if translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
+
+            print(detail_submenu_translations)
+            return render(request, 'main/submenu_detail.html', {
+                'submenu': submenu,
+                'detail_submenu': detail_submenu,
+                'detail_submenu_translations': detail_submenu_translations,
+                # Include the selected language code in the template
+                'selected_code': selected_code,
+            })
         else:
             print("Sub Menu name is empty.")
             return redirect('translate')
     except SubMenu.DoesNotExist:
         return redirect('translate')
-
-
 
 
 def menu_detail(request, detail_url):
