@@ -54,7 +54,7 @@
                                                             {% if submenu.detail_url %}
                                                                 <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                                             {% else %}
-                                                                <p>Detail URL is empty.</p>
+                                                                <a href="{% url 'notfound' %}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                                             {% endif %}
                                                         </li>
                                                     {% endfor %}
