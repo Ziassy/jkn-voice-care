@@ -64,11 +64,11 @@ def translate(request):
     })
 
 
-def menu_detail(request, detail_url):
+def submenu_detail(request, detail_url):
     try:
         submenu = get_object_or_404(SubMenu, detail_url=detail_url)
         if submenu.submenu_name:
-            return render(request, 'main/menu_detail.html', {'submenu': submenu})
+            return render(request, 'main/submenu_detail.html', {'submenu': submenu})
         else:
             print("Menu name is empty.")
             return redirect('translate')

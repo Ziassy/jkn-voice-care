@@ -32,7 +32,11 @@
                     {% for menu in menus %}
                         {% if menu.menu_name == menu_name %}
                             <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}" style="display: none;">Play</button>
-                            <a href="" class="open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                            {% if menu.detail_url %}
+                                <a href="#"><img src="{{ menu.image_url }}" alt="{{ menu.submenu_name }}"></a>
+                            {% else %}
+                                <a href="" class="open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                            {% endif %}
 
                             <!-- Modal submenu -->
                             <div class="modal fade submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">

@@ -8,7 +8,7 @@ from django.views.defaults import page_not_found
 
 urlpatterns = [
     path('', views.translate, name='translate'),
-    path('submenu/<str:detail_url>/', views.menu_detail, name='submenu_detail'),
+    path('submenu/<str:detail_url>/', views.submenu_detail, name='submenu_detail'),
     re_path(r'^notfound/$', lambda request,
             exception=None: page_not_found(request, exception), name='notfound'),
 ]
