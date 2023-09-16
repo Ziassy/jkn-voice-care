@@ -19,6 +19,7 @@ def translate(request):
     # Create a dictionary to store translations for each menu
     menu_translations = {}
     submenu_translations = {}
+    detail_submenu_translations = {}
 
     menus = TranslatedMenu.objects.all()
 
@@ -37,6 +38,14 @@ def translate(request):
             ).first()
             submenu_translations[submenu.submenu_name] = submenu_translation.translation if submenu_translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
 
+            detail_submenu = DetailSubMenu.objects.filter(submenu=submenu)
+            for ds in detail_submenu:
+                translation = DetailSubMenuTranslation.objects.filter(
+                    detail_submenu=ds,
+                    language__code=selected_language
+                ).first()
+                detail_submenu_translations[ds.title] = translation.translation if translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
+
     if request.method == 'GET':
         for menu_id, translation_text in menu_translations.items():
             if translation_text:
@@ -52,6 +61,15 @@ def translate(request):
                 tts = gTTS(text=submenu_translation_text, lang='id')
                 audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
                 tts.save(audio_path)
+        
+        for detail_submenu, detail_sub_translation in detail_submenu_translations.items():
+            if detail_sub_translation:
+                audio_filename = f'audio-detail-{detail_submenu}.mp3'
+                tts = gTTS(text=detail_sub_translation, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
+                
+    print(detail_submenu_translations)
 
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
@@ -87,12 +105,10 @@ def submenu_detail(request, detail_url):
                 ).first()
                 detail_submenu_translations[ds.title] = translation.translation if translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
 
-            print(detail_submenu_translations)
             return render(request, 'main/submenu_detail.html', {
                 'submenu': submenu,
                 'detail_submenu': detail_submenu,
                 'detail_submenu_translations': detail_submenu_translations,
-                # Include the selected language code in the template
                 'selected_code': selected_code,
             })
         else:

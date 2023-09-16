@@ -60,9 +60,10 @@ const playButtonClick = (e) => {
   const translation = e.target.getAttribute('data-translation');
   const menuId = e.target.getAttribute('data-menu-id');
   const menuName = e.target.getAttribute('data-menu-name');
-  const detailURL = `/menu/${menuId}/`;
   const translationContent = document.getElementById('translationContent');
   const audioPlayer = document.getElementById('audioPlayer');
+
+  const isButtonMenu = e.target.getAttribute('data-isbuttonmenu');
 
   // Set the translation content
   translationContent.textContent = translation;
@@ -70,12 +71,24 @@ const playButtonClick = (e) => {
   // Replace spaces with underscores in menuName
   const menuNameWithoutSpaces = replaceSpacesWithUnderscores(menuName);
 
-  // Construct the audio file URL based on the menuName
-  const audioURL = `/media/audio-${menuNameWithoutSpaces}.mp3`; // Adjust the file format as needed
+  if (isButtonMenu === 'true') {
+    // Construct the audio file URL based on the menuName
+    const audioURL = `/media/audio-detail-${menuNameWithoutSpaces}.mp3`; // Adjust the file format as needed
 
-  // Set the audio source and display the audio player
-  audioPlayer.src = audioURL;
-  audioPlayer.play();
+    // Set the audio source and display the audio player
+    audioPlayer.src = audioURL;
+    audioPlayer.play();
+  } else {
+
+    // Construct the audio file URL based on the menuName
+    const audioURL = `/media/audio-${menuNameWithoutSpaces}.mp3`; // Adjust the file format as needed
+
+    // Set the audio source and display the audio player
+    audioPlayer.src = audioURL;
+    audioPlayer.play();
+  }
+  console.log(isButtonMenu)
+
 
 };
 
@@ -110,11 +123,11 @@ const goBack = () => {
 }
 
 
-document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
-document.getElementById('languageSelect').addEventListener('change', languageSelectChange);
 document.querySelectorAll('.play').forEach(button => {
   button.addEventListener('click', playButtonClick);
 });
+document.getElementById('languageSelect').addEventListener('change', languageSelectChange);
 document.addEventListener('DOMContentLoaded', initializeSubmenus);
 
+document.getElementById('toggleSwitch').addEventListener('change', toggleSwitchChange);
 loadToggleStatus();
