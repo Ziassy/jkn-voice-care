@@ -482,7 +482,7 @@ input:checked + .slider:before {
   bottom: 0;
   justify-content: center;
   align-items: center;
-  /* display: none; */
+  display: none;
 }
 
 .fasilitas-kesehatan-line {

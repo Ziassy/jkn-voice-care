@@ -1,7 +1,9 @@
 const customButtons = document.getElementsByClassName("custom-button");
+const customButtonss = document.getElementsByClassName("custom-buttondua");
 const toggleCheckbox = document.getElementById("toogleCheckbox");
 const popupantrean = document.getElementById('popupantrean');
 const buttonPelayanan = document.getElementById('button-pelayanan');
+const menuIcons = document.querySelectorAll(".menu-icon");
 // const body = document.body;
 
 function showCustomButton() {
@@ -11,7 +13,6 @@ for (let i = 0; i < customButtons.length; i++) {
   customButtons[i].style.display = isActive ? 'block' : 'none';
 }
 
-const menuIcons = document.querySelectorAll(".menu-icon");
 
 menuIcons.forEach((menuIcon) => {
   if (isActive) {
