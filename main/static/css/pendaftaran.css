@@ -1,3 +1,18 @@
+.custom-button {
+  height: 29px; 
+  padding-top: 4px; 
+  padding-bottom: 4px; 
+  padding-left: 8px; 
+  padding-right: 12px; 
+  background: #06B6D4; 
+  border-radius: 16px; 
+  border: 1px #0891B2 solid; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 8px; 
+  display: flex
+}
+
 /* formulir peserta */
 .peserta {
   left: 35px; 
@@ -25,21 +40,6 @@
   font-weight: 500; 
   line-height: 27px; 
   word-wrap: break-word
-}
-
-.peserta #button-peserta {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex
 }
 
 .peserta .participiant-text {
@@ -269,22 +269,7 @@
   word-wrap: break-word
 }
 
-.faskes-container #faskes-button {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex
-}
-
-.faskes-container .faskes-button-label {
+.faskes-container .faskes-label {
   text-align: center; 
   color: #FAFAFA; 
   font-size: 14px; 
@@ -459,22 +444,7 @@ display: inline-flex;
   word-wrap: break-word
 }
 
-.poli #poli-button {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex
-}
-
-.poli .poli-button-text {
+.poli .politext {
   text-align: center; 
   color: #FAFAFA; 
   font-size: 14px; 
@@ -631,22 +601,7 @@ display: inline-flex;
   word-wrap: break-word;
 }
 
-.tanggal-daftar #tanggal-daftar-button {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex;
-}
-
-.tanggal-daftar .tanggal-daftar-button-text {
+.tanggal-daftar .tanggal-daftar-text {
   text-align: center; 
   color: #FAFAFA; 
   font-size: 14px; 
@@ -810,22 +765,7 @@ display: inline-flex;
   word-wrap: break-word
 }
 
-.jadwal-container #jadwal-button {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex;
-}
-
-.jadwal-container .jadwal-button-text {
+.jadwal-container .jadwal-text {
   text-align: center; 
   color: #FAFAFA; 
   font-size: 14px; 
@@ -1015,22 +955,7 @@ display: inline-flex;
   word-wrap: break-word;
 }
 
-.keluhan #keluhan-button {
-  height: 29px; 
-  padding-top: 4px; 
-  padding-bottom: 4px; 
-  padding-left: 8px; 
-  padding-right: 12px; 
-  background: #06B6D4; 
-  border-radius: 16px; 
-  border: 1px #0891B2 solid; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 8px; 
-  display: flex;
-}
-
-.keluhan .keluhan-button-text {
+.keluhan .keluhantext {
   text-align: center; 
   color: #FAFAFA; 
   font-size: 14px; 

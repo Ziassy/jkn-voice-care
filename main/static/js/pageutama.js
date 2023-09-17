@@ -1,5 +1,8 @@
 const customButtons = document.getElementsByClassName("custom-button");
 const toggleCheckbox = document.getElementById("toogleCheckbox");
+const popupantrean = document.getElementById('popupantrean');
+const buttonPelayanan = document.getElementById('button-pelayanan');
+// const body = document.body;
 
 function showCustomButton() {
 const isActive = toggleCheckbox.checked;
@@ -23,9 +26,6 @@ menuIcons.forEach((menuIcon) => {
   toggleCheckbox.addEventListener('change', showCustomButton);
   showCustomButton();
 
-  // popup
-  const popupantrean = document.getElementById('popupantrean');
-  const buttonPelayanan = document.getElementById('button-pelayanan');
 
 
   // Function to show the popup
