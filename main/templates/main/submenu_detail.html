@@ -8,11 +8,28 @@
     {% for menu_name, translation in detail_submenu_translations.items %}
     <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
         {% for detail in detail_submenu %}
-            <p>Nama title detail: {{ detail.title }}</p>
             {% if detail.title == 'Peserta' %}
+            <p>{{ detail.title }}</p>
                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
             {% elif detail.title == 'Faskes Tingkat Pertama' %}
                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+            {% elif detail.title == 'Faskes Tingkat Pertama' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+            {% elif detail.title == 'Pilih Poli' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+            {% elif detail.title == 'Pilih Tanggal Daftar' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+            {% elif detail.title == 'Pilih Jadwal' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+            {% elif detail.title == 'Keluhan' %}
+            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
+
             {% endif %}
         {% endfor %}
     {% endfor %}
