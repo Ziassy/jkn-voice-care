@@ -3,54 +3,139 @@
 
 {% load static %}
 {% block content %}
-    <div class="media">
+    <div class="container container-w480">
         <nav class="navbar">
-            <div class="navbar-custom-container">
+            <div class="navbar-custom-container position-relative">
                 <img class="navbar" src="{% static '/images/navbar-image.png' %}" alt="Navbar Image" />
-            </div>
-            <div class="navbar-body row">
-                <div class="col">
-                     <div class="navbar-body-text">v4.5.0</div>
-                </div>
-                <div class="col">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
-                         <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.33510 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
-                     </svg>
+                <div class="navbar-body position-absolute row">
+                    <div class="col-md-6">
+                        <div class="navbar-body-text">v4.5.0</div>
+                    </div>
+                    <div class="col-md-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
+                            <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.33510 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </nav>
-    </div>
 
-    <div class="informasi-pengguna">
-        <div class="flex-left">
-            <span class="greeting-text">Hi, Hidayat</span> 
-            <img src="{% static '/images/mask-group.svg' %}" alt="badge verified" class="badge-verified" />
-        </div>
-        <div class="content">
-        <div class="topic-text">Voice Care</div>
-        <div class="badge">
-        <form method="get" class="mb-4">
-                <div class="input-group dropdown-language">
-                    <select class="form-select" id="languageSelect" name="language" selectpicker>
-                        <option value="Default" disabled>
-                                Pilih
-                        </option>
-                        {% for language in languages %}
-                            <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
-                                {{ language.name }}
-                            </option>
-                        {% endfor %}
-                    </select>
+        <div class="mx-auto text-center user-information">
+            <div class="d-md-flex align-items-center justify-content-center">
+                <div class="col-md-4 text-md-center mb-3 mb-md-0">
+                    <span class="greeting-text">Hi, Hidayat</span> 
+                    <img src="{% static '/images/mask-group.svg' %}" alt="badge verified" class="badge-verified" />
                 </div>
-        </form>
-            <label class="switch">
-            <input type="checkbox" id="toogleCheckbox">
-            <span class="slider round"></span>
-            </label>
+                <div class="container-voice-care col-md-8">
+                    <div class="border-line-blue">
+                        <div class="title-voice-care">Voice Care</div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <form method="get" class="mb-2">
+                                    <div class="input-group dropdown-language">
+                                        <select class="form-select" id="languageSelect" name="language" selectpicker>
+                                            <option value="Default" disabled>
+                                                Pilih
+                                            </option>
+                                            {% for language in languages %}
+                                                <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                                                    {{ language.name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="toggle-switch col-md-3">
+                                <label class="switch">
+                                    <input type="checkbox" id="toogleCheckbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 
+{% comment %} <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-12">
+            <nav class="navbar">
+                <div class="navbar-custom-container">
+                    <img class="navbar" src="{% static '/images/navbar-image.png' %}" alt="Navbar Image" />
+                </div>
+                <div class="navbar-body row">
+                    <div class="col-md-6">
+                        <div class="navbar-body-text">v4.5.0</div>
+                    </div>
+                    <div class="col-md-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
+                            <path d="M4 10.647C3.99927 8.98479 4.51631 7.36365 5.47927 6.00882C6.44223 4.65398 7.80329 3.63274 9.37333 3.08698C9.31253 2.70606 9.33510 2.31649 9.43947 1.94513C9.54384 1.57378 9.72754 1.22949 9.97788 0.936022C10.2282 0.642551 10.5393 0.406886 10.8895 0.245286C11.2398 0.0836868 11.6209 0 12.0067 0C12.3924 0 12.7736 0.0836868 13.1238 0.245286C13.4741 0.406886 13.7851 0.642551 14.0355 0.936022C14.2858 1.22949 14.4695 1.57378 14.5739 1.94513C14.6782 2.31649 14.7008 2.70606 14.64 3.08698C16.2076 3.63497 17.5657 4.65717 18.5262 6.01182C19.4866 7.36647 20.0017 8.98641 20 10.647V18.647L24 21.3137V22.647H0V21.3137L4 18.647V10.647ZM14.6667 23.9803C14.6667 24.6876 14.3857 25.3658 13.8856 25.8659C13.3855 26.366 12.7072 26.647 12 26.647C11.2928 26.647 10.6145 26.366 10.1144 25.8659C9.61429 25.3658 9.33333 24.6876 9.33333 23.9803H14.6667Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+            </nav>
 
+            <div class="informasi-pengguna">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="flex-left">
+                            <span class="greeting-text">Hi, Hidayat</span> 
+                            <img src="{% static '/images/mask-group.svg' %}" alt="badge verified" class="badge-verified" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="content">
+                            <div class="topic-text">Voice Care</div>
+                            <div class="badge">
+                                <form method="get" class="mb-4">
+                                    <div class="input-group dropdown-language">
+                                        <select class="form-select" id="languageSelect" name="language" selectpicker>
+                                            <option value="Default" disabled>
+                                                Pilih
+                                            </option>
+                                            {% for language in languages %}
+                                                <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                                                    {{ language.name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </form>
+                                <label class="switch">
+                                    <input type="checkbox" id="toogleCheckbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="menu-item">
+                <div class="menu-item-content">
+                    <div class="menu-card">
+                        <div class="menu-icon">
+                            <button type="button" class="custom-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="12" viewBox="0 0 12 15" fill="none">
+                                    <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
+                                </svg>
+                                Putar
+                            </button> 
+                        </div>
+                        <div class="info-card-image"> 
+                            <div class="info-card-bg">
+                                <div class="info-card-avatar"></div>
+                                <img class="info-card-details" src="{% static '/images/image-20.png' %}" alt="Info Program JKN Image">
+                            </div>
+                            <div class="info-card-title">Info Program JKN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
 {% endblock content %}
