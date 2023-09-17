@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <title>Pemberitahuan dengan Kotak</title>
   <link rel="stylesheet" href="../../../static/css/pendaftaran.css">
+  <script src="../../../static/js/pendaftaran.js"></script>
 </head>
 <body>
 
@@ -15,7 +16,7 @@
     <div class="faskes-container">
       <div class="faskes-info">
         <div class="faskes-title">Faskes Tingkat Pertama</div>
-        <button class="faskes-button" type="button">
+        <button class="custom-button" id="faskes-button" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>
@@ -79,7 +80,7 @@
   <section class="peserta">
     <div class="peserta-header">
       <div class="peserta-title">Peserta</div>
-      <button type="button" class="custom-button">
+      <button type="button" class="custom-button" id="button-peserta">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
           <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
         </svg>
@@ -128,7 +129,7 @@
     <div class="poli-container">
       <div class="poli-header">
         <div class="poli-title">Pilih Poli</div>
-        <button class="poli-button" type="button">
+        <button class="custom-button" type="button" id="poli-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>
@@ -177,7 +178,7 @@
     <div class="tanggal-daftar-container">
       <div class="tanggal-daftar-header">
         <div class="tanggal-daftar-title">Pilih Tanggal Daftar</div>
-        <button class="tanggal-daftar-button" type="button">
+        <button class="custom-button" type="button" id="tanggal-daftar-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>
@@ -226,7 +227,7 @@
     <div class="jadwal-container">
       <div class="jadwal-header">
         <div class="jadwal-title">Pilih Jadwal</div>
-        <button class="jadwal-button" type="button">
+        <button class="custom-button" type="button" id="jadwal-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>
@@ -279,9 +280,9 @@
   
   <section class="keluhan">
     <div class="keluhan-container">
-      <div class="keluhan-header" style="align-self: stretch; justify-content: center; align-items: center; display: inline-flex">
-        <div class="keluhan-title" style="flex: 1 1 0; color: #06B6D4; font-size: 18px; font-family: Poppins; font-weight: 500; line-height: 27px; word-wrap: break-word">Keluhan</div>
-        <button class="keluhan-button" type="button" style="height: 29px; padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 12px; background: #06B6D4; border-radius: 16px; border: 1px #0891B2 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+      <div class="keluhan-header">
+        <div class="keluhan-title">Keluhan</div>
+        <button class="custom-button" type="button" id="keluhan-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
             <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
           </svg>

@@ -27,7 +27,7 @@
   word-wrap: break-word
 }
 
-.peserta .custom-button {
+.peserta #button-peserta {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
@@ -269,7 +269,7 @@
   word-wrap: break-word
 }
 
-.faskes-container .faskes-button {
+.faskes-container #faskes-button {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
@@ -459,7 +459,7 @@ display: inline-flex;
   word-wrap: break-word
 }
 
-.poli .poli-button {
+.poli #poli-button {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
@@ -631,7 +631,7 @@ display: inline-flex;
   word-wrap: break-word;
 }
 
-.tanggal-daftar .tanggal-daftar-button {
+.tanggal-daftar #tanggal-daftar-button {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
@@ -810,7 +810,7 @@ display: inline-flex;
   word-wrap: break-word
 }
 
-.jadwal-container .jadwal-button {
+.jadwal-container #jadwal-button {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
@@ -1015,7 +1015,7 @@ display: inline-flex;
   word-wrap: break-word;
 }
 
-.keluhan .keluhan-button {
+.keluhan #keluhan-button {
   height: 29px; 
   padding-top: 4px; 
   padding-bottom: 4px; 
