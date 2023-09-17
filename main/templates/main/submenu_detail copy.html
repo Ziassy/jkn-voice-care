@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load custom_filters %}
+
+{% load static %}
+{% block content %}
+    <button class="btn btn-primary" onclick="goBack()">Back to Menu List {{ submenu.submenu_name }}</button>
+    
+    {% for menu_name, translation in detail_submenu_translations.items %}
+    <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+        {% for detail in detail_submenu %}
+            <p>Nama title detail: {{ detail.title }}</p>
+            {% if detail.title == 'Peserta' %}
+                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
+            {% elif detail.title == 'Faskes Tingkat Pertama' %}
+                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+
+    <!-- Modal translation -->
+    <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="translationContent"></p>
+                    <audio id="audioPlayer"></audio>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal translation -->
+    
+
+{% endblock content %}
