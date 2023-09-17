@@ -4,13 +4,15 @@
 {% load static %}
 {% block content %}
     <button class="btn btn-primary" onclick="goBack()">Back to Menu List {{ submenu.submenu_name }}</button>
+    <p></p>
     
     {% for menu_name, translation in detail_submenu_translations.items %}
     <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
         {% for detail in detail_submenu %}
+        {% if menu_name == detail.title %}
             {% if detail.title == 'Peserta' %}
-            <p>{{ detail.title }}</p>
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
+                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
+                <p>{{ detail.title }}</p>
             {% elif detail.title == 'Faskes Tingkat Pertama' %}
                 <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
                 <p>{{ detail.title }}</p>
@@ -29,8 +31,8 @@
             {% elif detail.title == 'Keluhan' %}
             <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
                 <p>{{ detail.title }}</p>
-
-            {% endif %}
+                {%endif%}
+        {% endif %}
         {% endfor %}
     {% endfor %}
 
