@@ -21,5 +21,36 @@
         </nav>
     </div>
 
+    <div class="informasi-pengguna">
+        <div class="flex-left">
+            <span class="greeting-text">Hi, Hidayat</span> 
+            <img src="{% static '/images/mask-group.svg' %}" alt="badge verified" class="badge-verified" />
+        </div>
+        <div class="content">
+        <div class="topic-text">Voice Care</div>
+        <div class="badge">
+        <form method="get" class="mb-4">
+                <div class="input-group dropdown-language">
+                    <select class="form-select" id="languageSelect" name="language" selectpicker>
+                        <option value="Default" disabled>
+                                Pilih
+                        </option>
+                        {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                                {{ language.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+        </form>
+            <label class="switch">
+            <input type="checkbox" id="toogleCheckbox">
+            <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+  </div>
+
+
 
 {% endblock content %}
