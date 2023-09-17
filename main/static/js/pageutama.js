@@ -27,8 +27,6 @@ menuIcons.forEach((menuIcon) => {
   toggleCheckbox.addEventListener('change', showCustomButton);
   showCustomButton();
 
-
-
   // Function to show the popup
   function showPopup() {
     popupantrean.style.display = 'block';

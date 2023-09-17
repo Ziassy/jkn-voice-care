@@ -363,6 +363,7 @@ input:checked + .slider:before {
   margin-right: 26px; justify-content: flex-start; align-items: flex-start; gap: 26px; display: inline-flex;
 }
 
+
 .menu-icon {
   height: 25px;
   padding: 2px 15px;
@@ -373,6 +374,11 @@ input:checked + .slider:before {
   align-items: center;
   gap: 4px;
   display: flex;
+  margin-bottom: 10px;
+}
+
+.info-card-image {
+  margin-top: 10px;
 }
 
 .menu .custom-button {
@@ -381,6 +387,7 @@ input:checked + .slider:before {
   border: none; 
   padding: 4px 8px; 
   font-size: 12px;
+  align-self: center;
 }
 
 
