@@ -122,7 +122,60 @@
                 {% endfor %}
                 </div>
             </div>
-        </div>        
+        </div>   
+             
         <audio id="audioPlayer"></audio>
+
+        <!-- layout article -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static '/images/carousel(1).png' %}" class="d-block w-90" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static '/images/carousel(2).png' %}" class="d-block w-90" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static '/images/carousel(3).png' %}" class="d-block w-90" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        <!-- End layout article -->
+
+
+        <!-- Layout menu -->
+        <div class="container">
+            <div class="row bottom-bar">
+            <div class="col icon-menu">
+                <i class="bi bi-house-door-fill" onclick="change(this)"></i>
+                <p>Beranda</p>
+            </div>
+            <div class="col icon-menu">
+                <i class="bi bi-file-text-fill" onclick="change(this)"></i>
+                <p>Berita</p>
+            </div>
+            <div class="col icon-menu">
+                <i class="bi bi-credit-card-fill icon active" onclick="change(this)"></i>
+                <p>Kartu</p>
+            </div>
+            <div class="col icon-menu">
+                <i class="bi bi-chat-left-dots-fill" onclick="change(this)"></i>
+                <p>FAQ</p>
+            </div>
+            <div class="col icon-menu">
+                <i class="bi bi-person-circle" onclick="change(this)"></i>
+                <p>Profil</p>
+            </div>      
+            </div>
+        </div>
+        <!-- End Layout menu -->
     </div>
 {% endblock content %}

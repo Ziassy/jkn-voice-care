@@ -148,6 +148,24 @@ window.addEventListener('beforeunload', function () {
 });
 
 
+const change = (item) => {
+  const buttons = document.querySelectorAll('i');
+  const titleActive = document.querySelectorAll('.icon-menu p');
+  buttons.forEach(function (obj) {
+    obj.classList.remove("active");
+    obj.classList.remove("menubar-title");
+  });
+
+  item.classList.add("active");
+  item.classList.add("menubar-title");
+
+  console.log(titleActive);
+}
+
+const myCarousel = document.querySelector('#myCarousel')
+const carousel = new bootstrap.Carousel(myCarousel)
+
+
 document.querySelectorAll('.play').forEach(button => {
   button.addEventListener('click', playButtonClick);
 });
