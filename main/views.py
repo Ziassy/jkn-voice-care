@@ -46,28 +46,28 @@ def translate(request):
                 ).first()
                 detail_submenu_translations[ds.title] = translation.translation if translation else 'Mohon maaf pada menu ini masih belum tersedia JKN Voice Care'
 
-    # if request.method == 'GET':
-    #     for menu_id, translation_text in menu_translations.items():
-    #         if translation_text:
-    #             # Gunakan ID menu sebagai nama file audio
-    #             audio_filename = f'audio-{menu_id}.mp3'
-    #             tts = gTTS(text=translation_text, lang='id')
-    #             audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-    #             tts.save(audio_path)
+    if request.method == 'GET':
+        for menu_id, translation_text in menu_translations.items():
+            if translation_text:
+                # Gunakan ID menu sebagai nama file audio
+                audio_filename = f'audio-{menu_id}.mp3'
+                tts = gTTS(text=translation_text, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
 
-    #     for submenu_id, submenu_translation_text in submenu_translations.items():
-    #         if submenu_translation_text:
-    #             audio_filename = f'audio-{submenu_id}.mp3'
-    #             tts = gTTS(text=submenu_translation_text, lang='id')
-    #             audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-    #             tts.save(audio_path)
+        for submenu_id, submenu_translation_text in submenu_translations.items():
+            if submenu_translation_text:
+                audio_filename = f'audio-{submenu_id}.mp3'
+                tts = gTTS(text=submenu_translation_text, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
 
-    #     for detail_submenu, detail_sub_translation in detail_submenu_translations.items():
-    #         if detail_sub_translation:
-    #             audio_filename = f'audio-detail-{detail_submenu}.mp3'
-    #             tts = gTTS(text=detail_sub_translation, lang='id')
-    #             audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
-    #             tts.save(audio_path)
+        for detail_submenu, detail_sub_translation in detail_submenu_translations.items():
+            if detail_sub_translation:
+                audio_filename = f'audio-detail-{detail_submenu}.mp3'
+                tts = gTTS(text=detail_sub_translation, lang='id')
+                audio_path = os.path.join(settings.MEDIA_ROOT, audio_filename)
+                tts.save(audio_path)
     # Pass the selected_menu_id to the template
     return render(request, 'main/template.html', {
         'languages': languages,

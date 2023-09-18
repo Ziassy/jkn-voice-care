@@ -61,16 +61,11 @@ const replaceSpacesWithUnderscores = (str) => {
 };
 
 const playButtonClick = (e) => {
-  const translation = e.target.getAttribute('data-translation');
-  const menuId = e.target.getAttribute('data-menu-id');
   const menuName = e.target.getAttribute('data-menu-name');
-  const translationContent = document.getElementById('translationContent');
   const audioPlayer = document.getElementById('audioPlayer');
 
   const isButtonMenu = e.target.getAttribute('data-isbuttonmenu');
 
-  // Set the translation content
-  translationContent.textContent = translation;
 
   // Replace spaces with underscores in menuName
   const menuNameWithoutSpaces = replaceSpacesWithUnderscores(menuName);
@@ -119,7 +114,6 @@ const initializeSubmenus = () => {
 
       // saat openSubmenuButtons di klik Tampilkan submenu yang sesuai
       submenu.style.display = 'block';
-      console.log(submenu)
     });
   });
 };
