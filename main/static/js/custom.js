@@ -122,6 +122,31 @@ const goBack = () => {
   window.history.back();
 }
 
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+// Tambahkan event listener untuk body atau elemen lain yang sesuai
+document.body.addEventListener('click', function (event) {
+  // Loop melalui setiap popover yang ada
+  popoverList.forEach(popover => {
+    // Periksa apakah popover aktif
+    if (popover._activeTrigger.click) {
+      // Tutup popover jika di-klik di luar popover atau di button popover lain
+      if (!popover._element.contains(event.target)) {
+        popover.hide();
+      }
+    }
+  });
+});
+
+// Anda juga bisa menambahkan event listener untuk menghilangkan popover saat mengklik halaman lain
+window.addEventListener('beforeunload', function () {
+  // Tutup semua popover sebelum meninggalkan halaman
+  popoverList.forEach(popover => {
+    popover.hide();
+  });
+});
+
 
 document.querySelectorAll('.play').forEach(button => {
   button.addEventListener('click', playButtonClick);

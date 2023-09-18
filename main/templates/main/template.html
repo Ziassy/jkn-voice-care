@@ -6,7 +6,7 @@
     <div class="container container-w480">
         <nav class="navbar">
             <div class="navbar-custom-container position-relative">
-                <img class="navbar" src="{% static '/images/navbar-image.png' %}" alt="Navbar Image" />
+                <img class="navbar-img" src="{% static '/images/navbar-image.png' %}" alt="Navbar Image" />
                 <div class="navbar-body position-absolute row">
                     <div class="col-md-6">
                         <div class="navbar-body-text">v4.5.0</div>
@@ -66,9 +66,7 @@
                     {% if menu.menu_name == menu_name %}
                     <div class="col-md-3 mb-3">
                         <div class="card-body text-center">
-                            <button type="button" class="btn play">
-                               <i class="fas fa-play"></i> Putar
-                            </button>
+                            <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
                             {% if menu.detail_url %}
                                 <!-- If the menu has a detail URL and more than 0 submenus, display the submenu anchor. -->
                                 {% if menu.submenus.count > 0 %}
@@ -82,12 +80,51 @@
                             <p class="card-text">{{ menu_name }}</p>
                         </div>
                     </div>
+
+                    <!-- Modal submenu -->
+                    <div class="modal fade from-bottom modal-center submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content d-md-flex align-items-center justify-content-center">
+                            <div class="modal-header text-center">
+                            <h5 class="modal-title" id="modalSubmenuLabel">Pilih Jenis Fasilitas Kesehatan</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row row-submenu">
+                                     {% for submenu in menu.submenus.all %}
+                                    <div class="col-md-6">
+                                        {% with submenu_translations|get_subtranslation:submenu.submenu_name as submenu_translation %}
+                                        <p class="translation" hidden>{{ submenu_translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+                                        <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{submenu.submenu_name}}" data-bs-content="{{ submenu_translation }}"><i class="fas fa-play"></i> Putar</button>
+                                        {% endwith %}
+                                        {% if submenu.detail_url %}
+                                        <div class="card-border card-submenu d-flex justify-content-center align-items-center flex-column text-center">
+                                            <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}?language={{ selected_language }}" class="open-submenu"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                            <span class="border-blue"></span>
+                                            <p class="title-sub-menu">{{ submenu.submenu_name }}</p>
+                                        </div>
+                                        {% else %}
+                                        <div class="card-border card-submenu d-flex justify-content-center align-items-center flex-column text-center">
+                                            <a href="{% url 'notfound' %}?language={{ selected_language }}" class="open-submenu"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                            <span class="border-blue"></span>
+                                            <p class="title-sub-menu">{{ submenu.submenu_name }}</p>
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--End Modal submenu -->
                     {% endif %}
                 {% endfor %}
                 {% endfor %}
                 </div>
             </div>
-        </div>
+        </div>        
 
     </div>
 {% endblock content %}
