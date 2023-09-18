@@ -10,9 +10,11 @@ const toggleSwitchChange = () => {
 
   if (isToggleOn) {
     showPlayButtons();
+    select.style.backgroundColor = '#06B6D4';
   } else {
     hidePlayButtons();
     select.selectedIndex = 0;
+    select.style.backgroundColor = 'gray';
   }
 }
 
@@ -39,10 +41,12 @@ const loadToggleStatus = () => {
     toggleSwitch.checked = true;
     select.disabled = false;
     showPlayButtons();
+    select.style.backgroundColor = '#06B6D4';
   } else {
     toggleSwitch.checked = false;
     select.selectedIndex = 0;
     hidePlayButtons();
+    select.style.backgroundColor = 'gray';
   }
 }
 

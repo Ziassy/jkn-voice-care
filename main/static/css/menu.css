@@ -162,7 +162,6 @@ input:checked+.slider:before {
 
 #languageSelect {
   border-radius: 4px;
-  background: var(--primary-primary-500, #06B6D4);
   color: white;
   appearance: none;
   -webkit-appearance: none;
@@ -218,6 +217,7 @@ input:checked+.slider:before {
   font-weight: 500;
   padding-bottom: 2px;
   padding-top: 2px;
+  width: 100%;
 }
 
 .play:hover {
