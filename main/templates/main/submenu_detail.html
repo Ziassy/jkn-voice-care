@@ -8,13 +8,10 @@
             <div class="navbar-custom-container">
             <img class="navbar-img" src="{% static '/images/navbar-detail.png' %}" alt="navbar detail" />
             <div class="container text-center">
-                {% comment %} <button id="backButton" class="btn btn-primary" style="background-color: transparent; border:none;" onclick="goBack()">
-                    <i class="fas fa-arrow-left"></i>
-                </button> {% endcomment %}
                 <div class="img-text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                    <path d="M13.0666 4.26375L6.43395 10.8964L5.58039 11.75H6.7875H21.5V13.25H6.7875H5.58192L6.43363 14.1032L13.0557 20.7372L12 21.7929L2.70711 12.5L12.0012 3.20586L13.0666 4.26375Z" fill="#FAFAFA" stroke="#FAFAFA"/>
-                </svg>
+                <button id="backButton" class="btn btn-primary" style="background-color: transparent; border:none;" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
                 </div>
                 <div class="img-text1">Fasilitas Kesehatan Tingkat Pertama</div>
             </div>
@@ -27,7 +24,7 @@
                 {% for detail in detail_submenu %}
                 {% if menu_name == detail.title %}
                     {% if detail.title == 'Peserta' %}
-                    <div class="mb-3 mr-3">
+                    <div class="mt-4 mr-3">
                         <div class="row align-items-end">
                             <div class="col-md-8">
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
@@ -54,7 +51,7 @@
                         </div>
                     </div>
                     {% elif detail.title == 'Faskes Tingkat Pertama' %}
-                    <div class="mb-3">
+                    <div class="mb-3 mt-3">
                         <div class="row align-items-end">
                             <div class="col-md-8">
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
@@ -194,13 +191,13 @@
                 {% endfor %}
             {% endfor %}
 
-            <div class="mb-3 d-flex justify-content-center">
+            <div class="mt-4 d-flex justify-content-center">
                 <div class="custom-card">
                     <div class="info-text">*) Pendaftaran melalui aplikasi Mobile-JKN dibuka 24 jam sebelum jam buka operasional dan ditutup 1 jam sebelum jam tutup operasional</div>
                 </div>
             </div>
 
-            <div class="mb-3 text-center">
+            <div class="mt-4 text-center">
                 <button type="button" class="menu-button">
                 Simpan
                 </button>
@@ -208,6 +205,6 @@
         </div>
     </div>
 
-    
+    <script src="{% static 'js/toggle.js' %}"></script>
 
 {% endblock content %}
