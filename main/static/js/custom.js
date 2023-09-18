@@ -114,10 +114,12 @@ const initializeSubmenus = () => {
       // hide semua submenu terlebih dahulu
       allSubmenus.forEach(s => {
         s.style.display = 'none';
+        console.log("run this")
       });
 
       // saat openSubmenuButtons di klik Tampilkan submenu yang sesuai
       submenu.style.display = 'block';
+      console.log(submenu)
     });
   });
 };

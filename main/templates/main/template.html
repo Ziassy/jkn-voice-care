@@ -80,10 +80,8 @@
                             <p class="card-text">{{ menu_name }}</p>
                         </div>
                     </div>
-
                     <!-- Modal submenu -->
-                    <div class="modal fade from-bottom modal-center submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel"
-                        aria-hidden="true">
+                    <div class="modal fade from-bottom modal-center submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content d-md-flex align-items-center justify-content-center">
                             <div class="modal-header text-center">
@@ -99,13 +97,13 @@
                                         {% endwith %}
                                         {% if submenu.detail_url %}
                                         <div class="card-border card-submenu d-flex justify-content-center align-items-center flex-column text-center">
-                                            <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}?language={{ selected_language }}" class="open-submenu"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                             <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                             <span class="border-blue"></span>
                                             <p class="title-sub-menu">{{ submenu.submenu_name }}</p>
                                         </div>
                                         {% else %}
                                         <div class="card-border card-submenu d-flex justify-content-center align-items-center flex-column text-center">
-                                            <a href="{% url 'notfound' %}?language={{ selected_language }}" class="open-submenu"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                            <a href="{% url 'notfound' %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
                                             <span class="border-blue"></span>
                                             <p class="title-sub-menu">{{ submenu.submenu_name }}</p>
                                         </div>
