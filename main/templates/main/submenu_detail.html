@@ -8,7 +8,7 @@
 
   <nav class="navbar">
     <div class="navbar-custom-container">
-      <img class="navbar-img" src="{% static '/images/image-444.png' %}" alt="Navbar Image" />
+      <img class="navbar-img" src="{% static 'images/image-444.png' %}" alt="Navbar Image" />
       <div class="container text-center">
         <div class="img-text">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -20,7 +20,189 @@
     </div>
   </nav>
 
-</div>
+  {% for menu_name, translation in detail_submenu_translations.items %}
+  <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+  {% endfor %}
 
+  {% for detail in detail_submenu %}
+    <p>Nama title detail: {{ detail.title }}</p>
+    {% if detail.title == 'Peserta' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="box-input">
+            <div class="user-info">
+              <div class="user-details">
+                <div class="user-text">Jamal (0000xxxxxxx)</div>
+              </div>
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elif detail.title == 'Faskes Tingkat Pertama' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card-container">
+            <div class="header">
+              <div class="title">
+                <div class="title-inner">RS. Indonesia Raya</div>
+              </div>
+              <div class="content-body">
+                <div class="info">
+                  <img class="icon" src="{% static 'images/image-44.png' %}" alt="Alamat Icon" />
+                  <div class="info-details">
+                    <div class="info-label">Alamat</div>
+                    <div class="info-value">Jakarta Indonesia</div>
+                  </div>
+                </div>
+                <div class="info">
+                  <img class="icon" src="{% static 'images/image-45.png' %}" alt="Telepon Icon" />
+                  <div class="info-details">
+                    <div class="info-label">Telepon</div>
+                    <div class="info-value">021 - xxxxxx</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elif detail.title == 'Pilih Poli' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="box-input">
+            <div class="user-info">
+              <div class="user-details">
+                <div class="user-text">POLI UMUM</div>
+              </div>
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elif detail.title == 'Pilih Tanggal Daftar' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="box-input">
+            <div class="user-info">
+              <div class="user-details">
+                <div class="user-text">Hari ini (16-08-2023)</div>
+              </div>
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elif detail.title == 'Pilih Jadwal' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="box-input">
+            <div class="user-info">
+              <div class="user-details">
+                <div style="color: #525252; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Pilih Jadwal</div>
+              </div>
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elif detail.title == 'Keluhan' %}
+    <div class="mb-3">
+      <div class="row align-items-end">
+        <div class="col-md-8">
+          <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+        </div>
+      </div>
+      <div class="container-text">
+        <textarea class="form-control" rows="3">Silahkan isi keluhan...</textarea>
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+  <div class="mb-3 d-flex justify-content-center">
+    <div class="custom-card">
+      <div class="info-text">*) Pendaftaran melalui aplikasi Mobile-JKN dibuka 24 jam sebelum jam buka operasional dan ditutup 1 jam sebelum jam tutup operasional</div>
+    </div>
+  </div>
+
+  <div class="mb-3 text-center">
+    <button type="button" class="menu-button">
+      <div class="button-simpan">Simpan</div>
+    </button>
+  </div>
+</div>
 
 {% endblock content %}
