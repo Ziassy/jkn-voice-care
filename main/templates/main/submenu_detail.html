@@ -8,7 +8,7 @@
 
   <nav class="navbar">
     <div class="navbar-custom-container">
-      <img class="navbar-img" src="{% static 'images/image-444.png' %}" alt="Navbar Image" />
+      <img class="navbar-img" src="../../static/images/image-444.png" alt="Navbar Image" />
       <div class="container text-center">
         <div class="img-text">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -19,6 +19,27 @@
       </div>
     </div>
   </nav>
+
+  <!-- popup faskes -->
+  <section class="popupfaskes" id="faskes">
+    <div class="popup-container">
+      <div class="row transparent-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="none">
+          <path d="M24 0L47.5 13H24H0.500004L24 0Z" fill="rgb(170, 170, 170)"/>
+        </svg>
+      </div>
+      <div class="popup-title">
+        <div class="title-text">Keluhan</div>
+      </div>
+      <div class="popup-description">Anda dapat menambahkan informasi gejala yang dirasakan, seperti mengalami mual, pusing, batuk atau yang lainnya. Bisa Anda keluhkan disini</div>
+      <div class="tutup-selanjutnya">
+        <button type="button" class="tutup">
+          <div class="inner-tutup">Tutup</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
 
   {% for menu_name, translation in detail_submenu_translations.items %}
   <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>

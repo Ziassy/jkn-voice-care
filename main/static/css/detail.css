@@ -1,4 +1,22 @@
+* {
+  background-color: #EF4444;
+}
 
+.custom-buttondua {
+  height: 29px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 12px;
+  background: #06B6D4;
+  border-radius: 16px;
+  border: 1px #0891B2 solid;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  opacity: 0;
+}
 
 /* formulir peserta */
 .peserta {
