@@ -3,163 +3,24 @@
 
 {% load static %}
 {% block content %}
-<div style="width: 480px; height: 1273px; position: relative; background: white">
-    <section class="faskes">
-        <div class="faskes-container">
-        <div class="faskes-info">
-            <div class="faskes-title">Faskes Tingkat Pertama</div>
-            <button class="custom-buttondua" id="faskes-button" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-                <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-            </svg>
-            <div class="faskes-label">Putar</div>
-            </button>
-        </div>
-        <div class="faskes-subcontainer">
-            <div class="faskes-info-container">
-            <div class="faskes-info-box">
-                <div class="faskes-name">RS. Indonesia Raya</div>
-            </div>
-            <div class="faskes-address-box" style="align-self: stretch; height: 90px; padding-left: 12px; padding-right: 12px; padding-top: 20px; padding-bottom: 20px; background: white; border-left: 2px #06B6D4 solid; border-top: 1px #06B6D4 solid; border-right: 2px #06B6D4 solid; border-bottom: 2px #06B6D4 solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: flex">
-                <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-                <img style="width: 18px; height: 18px" src="{% static '/images/image-44.png' %}" />
-                <div class="faskes-address-details">
-                    <div class="faskes-address-label">Alamat</div>
-                    <div class="faskes-address-value">Jakarta Indonesia</div>
-                </div>
-                </div>
-                <div style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
-                <img style="width: 18px; height: 18px" src="{% static '/images/image-45.png' %}" />
-                <div class="faskes-address-details">
-                    <div class="faskes-address-label">Telepon</div>
-                    <div class="faskes-address-value">021 - xxxxxx</div>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="faskes-icon-container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
-            </svg>
-            </div>
-        </div>
-        </div>
-  </section>
 
-  <!-- popup faskes -->
-  <section class="popupfaskes" id="faskes">
-    <div class="popup-container">
-      <div class="row transparent-row">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="none">
-          <path d="M24 0L47.5 13H24H0.500004L24 0Z" fill="rgb(170, 170, 170)"/>
-        </svg>
-      </div>
-      <div class="popup-title">
-        <div class="title-text">Keluhan</div>
-      </div>
-      <div class="popup-description">Anda dapat menambahkan informasi gejala yang dirasakan, seperti mengalami mual, pusing, batuk atau yang lainnya. Bisa Anda keluhkan disini</div>
-      <div class="tutup-selanjutnya">
-        <button type="button" class="tutup">
-          <div class="inner-tutup">Tutup</div>
-        </button>
-      </div>
-    </div>
-  </section>
-  <!-- Peserta -->
-  <section class="peserta">
-    <div class="peserta-header">
-      <div class="peserta-title">Peserta</div>
-      <button type="button" class="custom-buttondua" id="button-peserta">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none">
-          <path d="M0.5 0.5V14.5L11.5 7.5L0.5 0.5Z" fill="#FAFAFA"/>
-        </svg>
-        <div class="participiant-text">Putar</div>
-      </button>
-    </div>
-    <div class="peserta-info-container">
-      <div class="peserta-item">
-        <div class="peserta-info">
-          <div class="peserta-name-info">
-            <div class="peserta-name">Jamal (0000xxxxxxx)</div>
-          </div>
-          <div class="peserta-icon-placeholder"></div>
-          <div class="peserta-icon-container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- popup peserta-->
-  <section class="popuppeserta" id="peserta">
-    <div class="popup-container">
-      <div class="row transparent-row">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13" fill="none">
-          <path d="M24 0L47.5 13H24H0.500004L24 0Z" fill="rgb(170, 170, 170)"/>
-        </svg>
-      </div>
-      <div class="popup-title">
-        <div class="title-text">Keluhan</div>
-      </div>
-      <div class="popup-description">Anda dapat menambahkan informasi gejala yang dirasakan, seperti mengalami mual, pusing, batuk atau yang lainnya. Bisa Anda keluhkan disini</div>
-      <div class="tutup-selanjutnya">
-        <button type="button" class="tutup">
-          <div class="inner-tutup">Tutup</div>
-        </button>
-      </div>
-    </div>
-  </section>
+<div class="container container-w480">
 
   <nav class="navbar">
-    <img class="navbar-logo" src="{% static '/images/image-444.png' %}" />
-    <div class="navbar-content">
-      <div class="navbar-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-          <path d="M13.0666 4.26375L6.43395 10.8964L5.58039 11.75H6.7875H21.5V13.25H6.7875H5.58192L6.43363 14.1032L13.0557 20.7372L12 21.7929L2.70711 12.5L12.0012 3.20586L13.0666 4.26375Z" fill="#FAFAFA" stroke="#FAFAFA"/>
-        </svg>
+    <div class="navbar-custom-container">
+      <img class="navbar-img" src="{% static '/images/image-444.png' %}" alt="Navbar Image" />
+      <div class="container text-center">
+        <div class="img-text">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+            <path d="M13.0666 4.26375L6.43395 10.8964L5.58039 11.75H6.7875H21.5V13.25H6.7875H5.58192L6.43363 14.1032L13.0557 20.7372L12 21.7929L2.70711 12.5L12.0012 3.20586L13.0666 4.26375Z" fill="#FAFAFA" stroke="#FAFAFA"/>
+          </svg>
+        </div>
+        <div class="img-text1">Fasilitas Kesehatan Tingkat Pertama</div>
       </div>
-      <div class="navbar-title">Fasilitas Kesehatan Tingkat Pertama</div>
     </div>
   </nav>
+
 </div>
 
-
-    {% comment %} <button class="btn btn-primary" onclick="goBack()">Back to Menu List {{ submenu.submenu_name }}</button>
-    
-    {% for menu_name, translation in detail_submenu_translations.items %}
-    <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
-        {% for detail in detail_submenu %}
-            <p>Nama title detail: {{ detail.title }}</p>
-            {% if detail.title == 'Peserta' %}
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-            {% elif detail.title == 'Faskes Tingkat Pertama' %}
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}">Play</button>
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-
-
-    <!-- Modal translation -->
-    <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
-                </div>
-                <div class="modal-body">
-                    <p id="translationContent"></p>
-                    <audio id="audioPlayer"></audio>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal translation --> {% endcomment %}
-    
 
 {% endblock content %}
