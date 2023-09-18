@@ -1,0 +1,107 @@
+{% extends 'main/base.html' %}
+{% load custom_filters %}
+
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Language Translator</h1>
+
+        <form method="get" class="mb-4">
+            <div class="input-group">
+                <select class="form-select" id="languageSelect" name="language" {% if not is_toggle_on %}disabled{% endif %}>
+                    <option value="Default" disabled>
+                            Pilih Bahasa
+                    </option>
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == selected_language %}selected{% endif %}>
+                            {{ language.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="toggleSwitch" {% if is_toggle_on %}checked{% endif %}>
+        </div>
+
+        {% for menu_name, translation in menu_translations.items %}
+            <div class="card">
+                <div class="card-body">
+                    <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+                    {% for menu in menus %}
+                        {% if menu.menu_name == menu_name %}
+                            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}" style="display: none;">Play</button>
+                            {% if menu.detail_url %}
+                                <!-- If the menu has a detail URL and more than 0 submenus, display the submenu anchor. -->
+                                {% if menu.submenus.count > 0 %}
+                                    <a href="" class="open-submenu" data-bs-toggle="modal" data-bs-target="#submenu-{{ menu.menu_id }}" data-submenu-id="{{ menu.menu_id }}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                                {% else %}
+                                    <a href="{% url 'menu_detail' detail_url=menu.detail_url %}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                                {% endif %}
+                            {% else %}
+                                <a href="{% url 'notfound' %}"><img src="{{ menu.image_url }}" alt="{{ menu.menu_name }}"></a>
+                            {% endif %}
+
+
+                            <!-- Modal submenu -->
+                            <div class="modal fade submenu" id="submenu-{{ menu.menu_id }}" tabindex="-1" aria-labelledby="modalSubmenuLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalSubmenuLabel">Sub menu</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card-body">
+                                                <ul>
+                                                   {% for submenu in menu.submenus.all %}
+                                                        <li>
+                                                            {% with submenu_translations|get_subtranslation:submenu.submenu_name as submenu_translation %}
+                                                                <p class="translation" hidden>{{ submenu_translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+                                                                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ submenu_translation }}" data-menu-id="{{ submenu.submenu_name }}" data-menu-name="{{ submenu.submenu_name }}" style="display: none;">Play</button>
+                                                            {% endwith %}
+                                                            {{ submenu.submenu_name }}
+                                                            {% if submenu.detail_url %}
+                                                                <a href="{% url 'submenu_detail' detail_url=submenu.detail_url %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                                            {% else %}
+                                                                <a href="{% url 'notfound' %}?language={{ selected_language }}"><img src="{{ submenu.image_url }}" alt="{{ submenu.submenu_name }}"></a>
+                                                            {% endif %}
+
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- End Modal submenu -->
+                        {% endif %}
+                    {% endfor %}
+                    <h5 class="card-title">{{ menu_name }}</h5>
+                </div>
+            </div>
+        {% endfor %}
+
+
+        <!-- Modal translation -->
+        <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="translationContent"></p>
+                        <audio id="audioPlayer"></audio>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal translation -->
+
+
+{% endblock content %}
