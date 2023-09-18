@@ -33,7 +33,7 @@
                             <div class="col-md-9">
                                 <form method="get" class="mb-2">
                                     <div class="input-group dropdown-language">
-                                        <select class="form-select" id="languageSelect" name="language" selectpicker>
+                                        <select class="form-select" id="languageSelect" name="language" {% if not is_toggle_on %}disabled{% endif %} selectpicker> 
                                             <option value="Default" disabled>
                                                 Pilih
                                             </option>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="toggle-switch col-md-3">
                                 <label class="switch">
-                                    <input type="checkbox" id="toogleCheckbox">
+                                    <input type="checkbox" id="toggleSwitch" {% if is_toggle_on %}checked{% endif %}>
                                     <span class="slider round"></span>
                                 </label>
                             </div>
