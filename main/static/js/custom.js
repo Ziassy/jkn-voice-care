@@ -109,7 +109,6 @@ const initializeSubmenus = () => {
       // hide semua submenu terlebih dahulu
       allSubmenus.forEach(s => {
         s.style.display = 'none';
-        console.log("run this")
       });
 
       // saat openSubmenuButtons di klik Tampilkan submenu yang sesuai
@@ -159,7 +158,6 @@ const change = (item) => {
   item.classList.add("active");
   item.classList.add("menubar-title");
 
-  console.log(titleActive);
 }
 
 const myCarousel = document.querySelector('#myCarousel')

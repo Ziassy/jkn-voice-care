@@ -17,6 +17,7 @@
             </div>
             </div>
         </nav>
+        <audio id="audioPlayer"></audio>
 
         <div class="container"> 
             {% for menu_name, translation in detail_submenu_translations.items %}
@@ -30,7 +31,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="row">
@@ -57,7 +58,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="row">
@@ -98,7 +99,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="row">
@@ -125,7 +126,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="row">
@@ -152,7 +153,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="row">
@@ -179,7 +180,7 @@
                             <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
                             </div>
                             <div class="col-md-3">
-                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true"><i class="fas fa-play"></i> Putar</button>
                             </div>
                         </div>
                         <div class="container-text">
@@ -205,6 +206,5 @@
         </div>
     </div>
 
-    <script src="{% static 'js/toggle.js' %}"></script>
 
 {% endblock content %}
