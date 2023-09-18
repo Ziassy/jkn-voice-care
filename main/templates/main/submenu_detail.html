@@ -3,59 +3,211 @@
 
 {% load static %}
 {% block content %}
-    <button class="btn btn-primary" onclick="goBack()">Back to Menu List {{ submenu.submenu_name }}</button>
-    <p></p>
-    
-    {% for menu_name, translation in detail_submenu_translations.items %}
-    <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
-        {% for detail in detail_submenu %}
-        {% if menu_name == detail.title %}
-            {% if detail.title == 'Peserta' %}
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Faskes Tingkat Pertama' %}
-                <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Faskes Tingkat Pertama' %}
-            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Pilih Poli' %}
-            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Pilih Tanggal Daftar' %}
-            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Pilih Jadwal' %}
-            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-            {% elif detail.title == 'Keluhan' %}
-            <button type="button" class="btn btn-success play" data-bs-toggle="modal" data-bs-target="#modaltranslation" data-translation="{{ translation }}" data-menu-id="{{ detail.id }}" data-menu-name="{{ detail.title }}" data-isbuttonmenu="true">Play</button>
-                <p>{{ detail.title }}</p>
-                {%endif%}
-        {% endif %}
-        {% endfor %}
-    {% endfor %}
+    <div class="container container-w480">
+        <nav class="navbar">
+            <div class="navbar-custom-container">
+            <img class="navbar-img" src="{% static '/images/navbar-detail.png' %}" alt="navbar detail" />
+            <div class="container text-center">
+                {% comment %} <button id="backButton" class="btn btn-primary" style="background-color: transparent; border:none;" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                </button> {% endcomment %}
+                <div class="img-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path d="M13.0666 4.26375L6.43395 10.8964L5.58039 11.75H6.7875H21.5V13.25H6.7875H5.58192L6.43363 14.1032L13.0557 20.7372L12 21.7929L2.70711 12.5L12.0012 3.20586L13.0666 4.26375Z" fill="#FAFAFA" stroke="#FAFAFA"/>
+                </svg>
+                </div>
+                <div class="img-text1">Fasilitas Kesehatan Tingkat Pertama</div>
+            </div>
+            </div>
+        </nav>
 
+        <div class="container"> 
+            {% for menu_name, translation in detail_submenu_translations.items %}
+            <p class="translation" hidden>{{ translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
+                {% for detail in detail_submenu %}
+                {% if menu_name == detail.title %}
+                    {% if detail.title == 'Peserta' %}
+                    <div class="mb-3 mr-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div class="box-input">
+                                <div class="user-info">
+                                <div class="user-details">
+                                    <div class="user-text">Jamal (0000xxxxxxx)</div>
+                                </div>
+                                <div class="icon-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif detail.title == 'Faskes Tingkat Pertama' %}
+                    <div class="mb-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <div class="card-container">
+                                <div class="header">
+                                <div class="title">
+                                    <div class="title-inner">RS. Indonesia Raya</div>
+                                </div>
+                                <div class="content-body">
+                                    <div class="info">
+                                    <img class="icon" src="{% static 'images/image-44.png' %}" alt="Alamat Icon" />
+                                    <div class="info-details">
+                                        <div class="info-label">Alamat</div>
+                                        <div class="info-value">Jakarta Indonesia</div>
+                                    </div>
+                                    </div>
+                                    <div class="info">
+                                    <img class="icon" src="{% static 'images/image-45.png' %}" alt="Telepon Icon" />
+                                    <div class="info-details">
+                                        <div class="info-label">Telepon</div>
+                                        <div class="info-value">021 - xxxxxx</div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                                </svg>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif detail.title == 'Pilih Poli' %}
+                    <div class="mb-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <div class="box-input">
+                                <div class="user-info">
+                                <div class="user-details">
+                                    <div class="user-text">POLI UMUM</div>
+                                </div>
+                                <div class="icon-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif detail.title == 'Pilih Tanggal Daftar' %}
+                    <div class="mb-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <div class="box-input">
+                                <div class="user-info">
+                                <div class="user-details">
+                                    <div class="user-text">Hari ini (16-08-2023)</div>
+                                </div>
+                                <div class="icon-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif detail.title == 'Pilih Jadwal' %}
+                    <div class="mb-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <div class="box-input">
+                                <div class="user-info">
+                                <div class="user-details">
+                                    <div style="color: #525252; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Pilih Jadwal</div>
+                                </div>
+                                <div class="icon-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14L8 10H16L12 14Z" fill="#06B6D4"/>
+                                    </svg>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% elif detail.title == 'Keluhan' %}
+                    <div class="mb-3">
+                        <div class="row align-items-end">
+                            <div class="col-md-8">
+                            <label for="exampleInputEmail1" class="form-label">{{ detail.title }}</label>
+                            </div>
+                            <div class="col-md-3">
+                            <button type="button" class="btn play ml-20" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}"><i class="fas fa-play"></i> Putar</button>
+                            </div>
+                        </div>
+                        <div class="container-text">
+                            <textarea class="form-control" rows="3">Silahkan isi keluhan...</textarea>
+                        </div>
+                    </div>
+                    {%endif%}
+                {% endif %}
+                {% endfor %}
+            {% endfor %}
 
-    <!-- Modal translation -->
-    <div class="modal fade" id="modaltranslation" tabindex="-1" aria-labelledby="modaltranslationLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modaltranslationLabel">Translation</h5>
+            <div class="mb-3 d-flex justify-content-center">
+                <div class="custom-card">
+                    <div class="info-text">*) Pendaftaran melalui aplikasi Mobile-JKN dibuka 24 jam sebelum jam buka operasional dan ditutup 1 jam sebelum jam tutup operasional</div>
                 </div>
-                <div class="modal-body">
-                    <p id="translationContent"></p>
-                    <audio id="audioPlayer"></audio>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                </div>
+            </div>
+
+            <div class="mb-3 text-center">
+                <button type="button" class="menu-button">
+                Simpan
+                </button>
             </div>
         </div>
     </div>
-    <!-- End Modal translation -->
-    <script src="{% static 'js/toggle.js' %}"></script>
+
     
 
 {% endblock content %}

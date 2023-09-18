@@ -223,6 +223,7 @@ input:checked+.slider:before {
 .play:hover {
   border: 1px solid var(--primary-primary-600, #0891B2);
   background: white;
+  color: #0891B2;
 }
 
 /* Animasi muncul dari bawah */

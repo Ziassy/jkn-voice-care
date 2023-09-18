@@ -66,7 +66,7 @@
                     {% if menu.menu_name == menu_name %}
                     <div class="col-md-3 mb-3">
                         <div class="card-body text-center">
-                            <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}"><i class="fas fa-play"></i> Putar</button>
+                            <button type="button" class="btn play w100" data-bs-toggle="popover" data-bs-placement="top" title="{{menu_name}}" data-bs-content="{{ translation }}" data-menu-id="{{ menu.menu_id }}" data-menu-name="{{ menu.menu_name }}"><i class="fas fa-play"></i> Putar</button>
                             {% if menu.detail_url %}
                                 <!-- If the menu has a detail URL and more than 0 submenus, display the submenu anchor. -->
                                 {% if menu.submenus.count > 0 %}
@@ -93,7 +93,7 @@
                                     <div class="col-md-6">
                                         {% with submenu_translations|get_subtranslation:submenu.submenu_name as submenu_translation %}
                                         <p class="translation" hidden>{{ submenu_translation|default:"Mohon maaf pada menu ini masih belum tersedia JKN Voice Care"|safe }}</p>
-                                        <button type="button" class="btn play" data-bs-toggle="popover" data-bs-placement="top" title="{{submenu.submenu_name}}" data-bs-content="{{ submenu_translation }}" data-menu-id="{{ submenu.submenu_name }}" data-menu-name="{{ submenu.submenu_name }}"><i class="fas fa-play"></i> Putar</button>
+                                        <button type="button" class="btn play w100" data-bs-toggle="popover" data-bs-placement="top" title="{{submenu.submenu_name}}" data-bs-content="{{ submenu_translation }}" data-menu-id="{{ submenu.submenu_name }}" data-menu-name="{{ submenu.submenu_name }}"><i class="fas fa-play"></i> Putar</button>
                                         {% endwith %}
                                         {% if submenu.detail_url %}
                                         <div class="card-border card-submenu d-flex justify-content-center align-items-center flex-column text-center">
